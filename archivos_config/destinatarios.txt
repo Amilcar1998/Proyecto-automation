@@ -1,0 +1,9 @@
+# Lista de destinatarios para el envío de reportes
+eliseo_lopezp@unicomer.com
+#jose_preza@unicomer.com
+#natali_maldonado@unicomer.com
+#dina_martinez@unicomer.com
+#alejandra_valle@unicomer.com
+#ankita_prajapati@unicomer.com
+#aura_elias@unicomer.com
+#erick_guerrac@unicomer.com

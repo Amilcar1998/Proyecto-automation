@@ -1,0 +1,29 @@
+<html>
+<body style='margin:0;padding:0;background:radial-gradient(circle at 50% 20%, #eaf1fb 0%, #c7d7ee 100%);font-family:Calibri,sans-serif;font-size:14px;color:#222;'>
+<div style='background:rgba(255,255,255,0.85);padding:32px 24px 24px 24px;border-radius:12px;box-shadow:0 2px 8px #b0c4de;'>
+<h2 style='color:#2a5699;margin-top:0;'>Reporte de Garantías</h2>
+<p>Estimado equipo,</p>
+<p>Adjunto encontrará el reporte de garantías generado automáticamente por el sistema de automatización AS400/FTP.</p>
+<p style='margin-bottom:16px;'>
+Este proceso realiza lo siguiente:<br>
+<ol style='margin:8px 0 16px 24px;'>
+  <li>Se Conecta a la base de datos AS400 y obtiene los ítems de garantías activos.</li>
+  <li>Filtra y selecciona los registros relevantes, separando los que tienen promoción los items que tienen promociones temporales se extraen todos, y los que tienen promociones permanentes solo se extraen alguno elegidos aleatoriamente. se adjuntan los productos</li>
+  <li>Inserta los ítems seleccionados en la tabla KREGP para su procesamiento.</li>
+  <li>Ejecuta los programas correspondientes al flujo de garantias por porcentaje</li>
+  <li>Genera un archivo Excel con el detalle de los ítems procesados para cada base.</li>
+  <li>Envía este correo con todos los reportes adjuntos a los destinatarios configurados.</li>
+  <li>Normalmente integración tiene el proceso de automático de procesamiento de los archivos itemImport pero si se requiere que se procesen de inmediato .</li>
+  <li>Puede solicitar la ayuda a soporteIntegracion. o dejando un ticket en el portal</li>
+  <li>https://grupounicomer.atlassian.net/servicedesk/customer/portal/53</li>
+</ol>
+</p>
+<ul>
+  <li>Esto se puede utilizar para los 4 paises aunque para nicaragua se puede ajustar ya que la información viaja por Xstore. pero es lo mismo.</li>
+  <li>Para dudas o comentarios, responder a este correo.</li>
+</ul>
+<p>Saludos!!!</p>
+<p><b>Eliseo López</b></p>
+</div>
+</body>
+</html>

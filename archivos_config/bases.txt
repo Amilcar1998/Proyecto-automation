@@ -1,0 +1,5 @@
+# Lista de bases habilitadas para el flujo de garantías
+#11
+12
+#13
+#14

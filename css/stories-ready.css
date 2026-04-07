@@ -1,0 +1,31 @@
+/* Ensure the stories table uses full device width and stays readable on small screens */
+#tableView .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+#storiesTable,
+#storiesTable_wrapper {
+    width: 100% !important;
+}
+#storiesTable {
+    table-layout: fixed;
+}
+#storiesTable th,
+#storiesTable td {
+    word-break: break-word;
+    white-space: normal;
+}
+@media (max-width: 992px) {
+    #storiesTable {
+        font-size: 0.9rem;
+    }
+    #storiesTable th,
+    #storiesTable td {
+        padding: 0.5rem;
+    }
+}
+@media (max-width: 576px) {
+    #storiesTable {
+        font-size: 0.85rem;
+    }
+}

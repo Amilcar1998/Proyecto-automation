@@ -1,0 +1,53 @@
+2026-03-23 15:45:17,345 - INFO - Conexión establecida correctamente
+2026-03-23 15:45:17,347 - INFO - ===== INICIO procesamiento base RI11DB =====
+2026-03-23 15:45:20,499 - INFO - Query ejecutada correctamente. Filas obtenidas: 100
+2026-03-23 15:45:22,894 - INFO - Query ejecutada correctamente. Filas obtenidas: 100
+2026-03-23 15:45:23,709 - INFO - Query ejecutada correctamente. Filas obtenidas: 5
+2026-03-23 15:45:23,740 - INFO - Total filas preparadas para salida en RI11DB: 500
+2026-03-23 15:45:23,742 - INFO - Exportando 500 filas para RI11DB en exactamente 10 archivo(s). Filas aprox por archivo: 50
+2026-03-23 15:45:23,758 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_1.xls | filas=50
+2026-03-23 15:45:23,785 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_2.xls | filas=50
+2026-03-23 15:45:23,812 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_3.xls | filas=50
+2026-03-23 15:45:23,843 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_4.xls | filas=50
+2026-03-23 15:45:23,866 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_5.xls | filas=50
+2026-03-23 15:45:23,891 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_6.xls | filas=50
+2026-03-23 15:45:23,910 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_7.xls | filas=50
+2026-03-23 15:45:23,933 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_8.xls | filas=50
+2026-03-23 15:45:23,955 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_9.xls | filas=50
+2026-03-23 15:45:23,985 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI11DB\20260323_154523\plantilla_RI11DB_10.xls | filas=50
+2026-03-23 15:45:23,986 - INFO - ===== FIN procesamiento base RI11DB | archivos=10 =====
+2026-03-23 15:45:23,986 - INFO - ===== INICIO procesamiento base RI12DB =====
+2026-03-23 15:45:25,844 - INFO - Query ejecutada correctamente. Filas obtenidas: 100
+2026-03-23 15:45:26,861 - INFO - Query ejecutada correctamente. Filas obtenidas: 100
+2026-03-23 15:45:27,710 - INFO - Query ejecutada correctamente. Filas obtenidas: 5
+2026-03-23 15:45:27,770 - INFO - Total filas preparadas para salida en RI12DB: 500
+2026-03-23 15:45:27,772 - INFO - Exportando 500 filas para RI12DB en exactamente 10 archivo(s). Filas aprox por archivo: 50
+2026-03-23 15:45:27,791 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_1.xls | filas=50
+2026-03-23 15:45:27,815 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_2.xls | filas=50
+2026-03-23 15:45:27,847 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_3.xls | filas=50
+2026-03-23 15:45:27,864 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_4.xls | filas=50
+2026-03-23 15:45:27,883 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_5.xls | filas=50
+2026-03-23 15:45:27,904 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_6.xls | filas=50
+2026-03-23 15:45:27,923 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_7.xls | filas=50
+2026-03-23 15:45:27,940 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_8.xls | filas=50
+2026-03-23 15:45:27,954 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_9.xls | filas=50
+2026-03-23 15:45:27,970 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI12DB\20260323_154527\plantilla_RI12DB_10.xls | filas=50
+2026-03-23 15:45:27,971 - INFO - ===== FIN procesamiento base RI12DB | archivos=10 =====
+2026-03-23 15:45:27,972 - INFO - ===== INICIO procesamiento base RI13DB =====
+2026-03-23 15:45:32,070 - INFO - Query ejecutada correctamente. Filas obtenidas: 100
+2026-03-23 15:45:33,204 - INFO - Query ejecutada correctamente. Filas obtenidas: 100
+2026-03-23 15:45:34,008 - INFO - Query ejecutada correctamente. Filas obtenidas: 5
+2026-03-23 15:45:34,054 - INFO - Total filas preparadas para salida en RI13DB: 500
+2026-03-23 15:45:34,056 - INFO - Exportando 500 filas para RI13DB en exactamente 10 archivo(s). Filas aprox por archivo: 50
+2026-03-23 15:45:34,082 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_1.xls | filas=50
+2026-03-23 15:45:34,114 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_2.xls | filas=50
+2026-03-23 15:45:34,136 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_3.xls | filas=50
+2026-03-23 15:45:34,155 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_4.xls | filas=50
+2026-03-23 15:45:34,184 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_5.xls | filas=50
+2026-03-23 15:45:34,225 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_6.xls | filas=50
+2026-03-23 15:45:34,249 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_7.xls | filas=50
+2026-03-23 15:45:34,273 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_8.xls | filas=50
+2026-03-23 15:45:34,295 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_9.xls | filas=50
+2026-03-23 15:45:34,314 - INFO - Archivo generado: C:\Users\eliseo_lopezp\proyecto1\utilidades\salida_plantillas\RI13DB\20260323_154534\plantilla_RI13DB_10.xls | filas=50
+2026-03-23 15:45:34,315 - INFO - ===== FIN procesamiento base RI13DB | archivos=10 =====
+2026-03-23 15:45:34,468 - INFO - Conexión cerrada correctamente

@@ -1,0 +1,28 @@
+2025-12-23 11:52:37,313 - INFO - Log guardándose en: logs\automatizacion_20251223.log
+2025-12-23 11:52:37,313 - INFO -  === AUTOMATIZACIÓN MODULAR INICIADA ===
+2025-12-23 11:52:37,314 - INFO - Archivo: productos_avanzado.xlsx
+2025-12-23 11:52:37,314 - INFO - === PASO 1: LECTURA EXCEL ===
+2025-12-23 11:52:37,314 - INFO - === MÓDULO 1: LECTURA EXCEL ===
+2025-12-23 11:52:37,314 - INFO - Archivo: productos_avanzado.xlsx
+2025-12-23 11:52:37,440 - INFO - Columnas encontradas: ['cotizacion_id', 'codigo', 'descripcion', 'cantidad', 'con_garantia', 'descuento_empleado', 'con_creditos', 'entrega_cliente', 'COTIZACION', 'ESTADO', 'FECHA_PROCESADO', 'ARCHIVO_WORD', 'tipo_entrega', 'Unnamed: 13']
+2025-12-23 11:52:37,486 - INFO - Se encontraron 13 cotizaciones
+2025-12-23 11:52:37,487 - INFO - Cotización 1: 2 productos
+2025-12-23 11:52:37,487 - INFO - Cotización 2: 3 productos
+2025-12-23 11:52:37,487 - INFO - Cotización 3: 3 productos
+2025-12-23 11:52:37,488 - INFO - Cotización 4: 3 productos
+2025-12-23 11:52:37,488 - INFO - Cotización 5: 1 productos
+2025-12-23 11:52:37,488 - INFO - Cotización 6: 1 productos
+2025-12-23 11:52:37,488 - INFO - Cotización 7: 1 productos
+2025-12-23 11:52:37,489 - INFO - Cotización 8: 1 productos
+2025-12-23 11:52:37,489 - INFO - Cotización 9: 1 productos
+2025-12-23 11:52:37,489 - INFO - Cotización 10: 3 productos
+2025-12-23 11:52:37,490 - INFO - Cotización 11: 1 productos
+2025-12-23 11:52:37,490 - INFO - Cotización 12: 4 productos
+2025-12-23 11:52:37,490 - INFO - Cotización 13: 6 productos
+2025-12-23 11:52:37,491 - INFO - === PASO 2: INICIALIZAR NAVEGADOR ===
+2025-12-23 11:53:16,237 - ERROR - Error inicializando navegador: Message: Process unexpectedly closed with status 0
+
+2025-12-23 11:53:16,238 - INFO - Limpiando recursos...
+2025-12-23 11:53:16,239 - INFO - Screenshots ya fueron eliminados por cotización
+2025-12-23 11:53:16,239 - INFO - Limpieza de recursos completada
+2025-12-23 11:53:16,240 - INFO - === AUTOMATIZACIÓN FINALIZADA ===
