@@ -1,0 +1,96 @@
+2026-08-27 08:32:01,536 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 08:32:04,229 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 08:32:06,006 - FTP_INV_DISCHARGE         - INFO - Se obtuvieron 1000 UPCs de la BD para reemplazo múltiple.
+2026-08-27 08:32:06,007 - FTP_INV_DISCHARGE         - INFO - Rango fechas | desde=2026-08-26 hasta=2026-08-27
+2026-08-27 08:32:06,846 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP | host=192.168.151.64 pais=SV
+2026-08-27 08:32:08,873 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075 fecha=20260826
+2026-08-27 08:32:08,886 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075 fecha=20260826
+2026-08-27 08:32:08,893 - FTP_INV_DISCHARGE         - INFO - Total archivos a procesar | cantidad=2
+2026-08-27 08:32:08,894 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-27 08:32:12,795 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-27 08:32:12,795 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075
+2026-08-27 08:32:14,783 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075
+2026-08-27 08:32:14,943 - FTP_INV_DISCHARGE         - INFO - INICIO limpiar_logs_riorpos
+2026-08-27 08:32:15,717 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP para limpiar logs | host=192.168.151.64
+2026-08-27 08:32:16,565 - FTP_INV_DISCHARGE         - INFO - Log más reciente preservado: /integration/uc4/log/RIORPOS/RIORPOS.log.2026-08-10
+2026-08-27 09:00:53,363 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 09:00:55,480 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 09:00:56,613 - FTP_INV_DISCHARGE         - INFO - Se obtuvieron 1000 UPCs de la BD para reemplazo múltiple.
+2026-08-27 09:00:56,613 - FTP_INV_DISCHARGE         - INFO - Rango fechas | desde=2026-08-26 hasta=2026-08-27
+2026-08-27 09:00:57,378 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP | host=192.168.151.64 pais=SV
+2026-08-27 09:00:59,374 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410.0167538075 fecha=20260826
+2026-08-27 09:00:59,376 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075 fecha=20260826
+2026-08-27 09:00:59,378 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075 fecha=20260826
+2026-08-27 09:00:59,379 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406.0167538075 fecha=20260826
+2026-08-27 09:00:59,381 - FTP_INV_DISCHARGE         - INFO - Total archivos a procesar | cantidad=4
+2026-08-27 09:00:59,381 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410.0167538075
+2026-08-27 09:01:01,312 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410.0167538075
+2026-08-27 09:01:01,312 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-27 09:01:03,239 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-27 09:01:03,240 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075
+2026-08-27 09:01:05,162 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075
+2026-08-27 09:01:05,164 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406.0167538075
+2026-08-27 09:01:07,051 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406.0167538075
+2026-08-27 09:01:07,199 - FTP_INV_DISCHARGE         - INFO - INICIO limpiar_logs_riorpos
+2026-08-27 09:01:08,013 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP para limpiar logs | host=192.168.151.64
+2026-08-27 09:01:08,831 - FTP_INV_DISCHARGE         - INFO - Log más reciente preservado: /integration/uc4/log/RIORPOS/RIORPOS.log.2026-08-10
+2026-08-27 09:01:08,971 - FTP_INV_DISCHARGE         - INFO - INICIO ejecutar_comando_as400 | comando=QSH CMD('/integration/uc4/component/script/invDischarge.sh /integration/uc4/in/InventoryDischarge/SV')
+2026-08-27 09:01:08,974 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 09:01:11,064 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 09:02:01,185 - FTP_INV_DISCHARGE         - INFO - Comando AS400 ejecutado exitosamente.
+2026-08-27 09:19:55,522 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 09:19:57,749 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 09:19:58,864 - FTP_INV_DISCHARGE         - INFO - Se obtuvieron 1000 UPCs de la BD para reemplazo múltiple.
+2026-08-27 09:19:58,864 - FTP_INV_DISCHARGE         - INFO - Rango fechas | desde=2026-08-26 hasta=2026-08-27
+2026-08-27 09:19:59,676 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP | host=192.168.151.64 pais=SV
+2026-08-27 09:20:01,235 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410.0167538075 fecha=20260826
+2026-08-27 09:20:01,235 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410_20260827_085915.0167538075 fecha=20260826
+2026-08-27 09:20:01,238 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406_20260827_085904.0167538075 fecha=20260826
+2026-08-27 09:20:01,238 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075 fecha=20260826
+2026-08-27 09:20:01,240 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_085907.0167538075 fecha=20260826
+2026-08-27 09:20:01,241 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075 fecha=20260826
+2026-08-27 09:20:01,243 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_085910.0167538075 fecha=20260826
+2026-08-27 09:20:01,245 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406.0167538075 fecha=20260826
+2026-08-27 09:20:01,248 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410_20260827_091509.0167538075 fecha=20260826
+2026-08-27 09:20:01,248 - FTP_INV_DISCHARGE         - INFO - Total archivos a procesar | cantidad=9
+2026-08-27 09:20:01,248 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410.0167538075
+2026-08-27 09:20:03,160 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410.0167538075
+2026-08-27 09:20:03,161 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410_20260827_085915.0167538075
+2026-08-27 09:20:05,016 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410_20260827_085915.0167538075
+2026-08-27 09:20:05,018 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406_20260827_085904.0167538075
+2026-08-27 09:20:06,858 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406_20260827_085904.0167538075
+2026-08-27 09:20:06,859 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-27 09:20:08,723 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-27 09:20:08,724 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_085907.0167538075
+2026-08-27 09:20:10,613 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_085907.0167538075
+2026-08-27 09:20:10,615 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075
+2026-08-27 09:20:12,466 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317.0167538075
+2026-08-27 09:20:12,467 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_085910.0167538075
+2026-08-27 09:20:14,264 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_085910.0167538075
+2026-08-27 09:20:14,265 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406.0167538075
+2026-08-27 09:20:16,019 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_134317_20260827_083406.0167538075
+2026-08-27 09:20:16,019 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410_20260827_091509.0167538075
+2026-08-27 09:20:17,823 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_083410_20260827_091509.0167538075
+2026-08-27 09:20:17,971 - FTP_INV_DISCHARGE         - INFO - INICIO limpiar_logs_riorpos
+2026-08-27 09:20:18,718 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP para limpiar logs | host=192.168.151.64
+2026-08-27 09:20:19,485 - FTP_INV_DISCHARGE         - INFO - Log más reciente preservado: /integration/uc4/log/RIORPOS/RIORPOS.log.2026-08-10
+2026-08-27 09:20:19,621 - FTP_INV_DISCHARGE         - INFO - INICIO ejecutar_comando_as400 | comando=SBMJOB CMD(QSH CMD('/integration/uc4/component/script/invDischarge.sh /integration/uc4/in/InventoryDischarge/SV')) JOB(INVDISCH)
+2026-08-27 09:20:19,625 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 09:20:21,687 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 09:20:22,195 - FTP_INV_DISCHARGE         - INFO - Comando AS400 ejecutado exitosamente.
+2026-08-27 09:28:31,139 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 09:28:33,288 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 09:28:34,416 - FTP_INV_DISCHARGE         - INFO - Se obtuvieron 1000 UPCs de la BD para reemplazo múltiple.
+2026-08-27 09:28:34,416 - FTP_INV_DISCHARGE         - INFO - Rango fechas | desde=2026-08-26 hasta=2026-08-27
+2026-08-27 09:28:35,160 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP | host=192.168.151.64 pais=SV
+2026-08-27 09:28:36,551 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_091841_20260827_092140.0167538075 fecha=20260826
+2026-08-27 09:28:36,551 - FTP_INV_DISCHARGE         - INFO - Total archivos a procesar | cantidad=1
+2026-08-27 09:28:36,552 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_091841_20260827_092140.0167538075
+2026-08-27 09:28:40,320 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260827_091841_20260827_092140.0167538075
+2026-08-27 09:28:40,457 - FTP_INV_DISCHARGE         - INFO - INICIO limpiar_logs_riorpos
+2026-08-27 09:28:41,183 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP para limpiar logs | host=192.168.151.64
+2026-08-27 09:28:41,936 - FTP_INV_DISCHARGE         - INFO - Log más reciente preservado: /integration/uc4/log/RIORPOS/RIORPOS.log.2026-08-10
+2026-08-27 09:28:42,068 - FTP_INV_DISCHARGE         - INFO - INICIO ejecutar_comando_as400 | comando=SBMJOB CMD(QSH CMD('/integration/uc4/component/script/invDischarge.sh /integration/uc4/in/InventoryDischarge/SV')) JOB(INVDISCH)
+2026-08-27 09:28:42,074 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-27 09:28:44,200 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-27 09:28:44,656 - FTP_INV_DISCHARGE         - INFO - Comando AS400 ejecutado exitosamente.

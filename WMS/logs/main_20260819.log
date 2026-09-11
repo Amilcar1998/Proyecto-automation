@@ -1,0 +1,10 @@
+2026-08-19 13:15:36,289 - jira_utilidades           - INFO - Iniciando a generar la Tarea en Jira para la base RI14DB
+2026-08-19 13:15:37,367 - jira_utilidades           - INFO - Status Code: 201
+2026-08-19 13:15:37,367 - jira_utilidades           - INFO - Clave generada correctamente: ML-870
+2026-08-19 13:15:37,369 - jira_utilidades           - INFO - Tarea creada correctamente: ML-870
+2026-08-19 13:15:38,250 - jira_utilidades           - INFO - Evidencia subida correctamente a ML-870
+2026-08-19 13:15:38,525 - jira_utilidades           - INFO - Transiciones disponibles: ['In Progress', 'Aborted']
+2026-08-19 13:15:39,001 - jira_utilidades           - INFO - Ticket ML-870 movido a 'In Progress'
+2026-08-19 13:15:39,306 - jira_utilidades           - INFO - Transiciones disponibles: ['On Hold', 'Done', 'Aborted']
+2026-08-19 13:15:39,999 - jira_utilidades           - INFO - Ticket ML-870 movido a 'Done'
+2026-08-19 13:15:39,999 - jira_utilidades           - INFO - Ticket ML-870 finalizado

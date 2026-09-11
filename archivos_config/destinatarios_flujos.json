@@ -1,0 +1,27 @@
+{
+    "garantias": [
+        "eliseo_lopezp@unicomer.com"
+    ],
+    "bases_trabajo_garantias": [
+        "11"
+    ],
+    "wms_infor": [
+        "eliseo_lopezp@unicomer.com",
+        "natali_maldonado@unicomer.com",
+        "alejandra_valle@unicomer.com",
+        "adriana_aguilar@unicomer.com",
+        "jorge_elias@outsource.unicomer.com",
+        "joseluis_perezm@unicomer.com",
+        "sonia_ramos@outsource.unicomer.com",
+        "christian_landaverde@outsource.unicomer.com",
+        "ronaldo_castro@unicomer.com"
+    ],
+    "default": [
+        "eliseo_lopezp@unicomer.com"
+    ],
+    "bases_trabajo": [
+        "14"
+    ],
+    "habilitar_jira": "N",
+    "habilitar_correo": "Y"
+}

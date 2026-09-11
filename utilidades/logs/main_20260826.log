@@ -1,0 +1,45 @@
+2026-08-26 13:37:10,603 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-26 13:37:12,572 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-26 13:37:13,542 - FTP_INV_DISCHARGE         - INFO - UPC obtenido de BD para reemplazo: 472643300012
+2026-08-26 13:37:13,542 - FTP_INV_DISCHARGE         - INFO - Rango fechas | desde=2026-08-25 hasta=2026-08-26
+2026-08-26 13:37:14,302 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP | host=192.168.151.64 pais=SV
+2026-08-26 13:37:17,088 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_130815.0167540047 fecha=20260826
+2026-08-26 13:37:17,095 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_130808.0167538075 fecha=20260826
+2026-08-26 13:37:17,095 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745.0167540047 fecha=20260826
+2026-08-26 13:37:17,096 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075 fecha=20260826
+2026-08-26 13:37:17,096 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_131811.0167538075 fecha=20260826
+2026-08-26 13:37:17,097 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_131822.0167540047 fecha=20260826
+2026-08-26 13:37:17,097 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_130808_20260826_131933.0167538075 fecha=20260826
+2026-08-26 13:37:17,097 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_130815_20260826_131935.0167540047 fecha=20260826
+2026-08-26 13:37:17,098 - FTP_INV_DISCHARGE         - INFO - Total archivos a procesar | cantidad=8
+2026-08-26 13:37:17,098 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_130815.0167540047
+2026-08-26 13:37:18,832 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_130815.0167540047
+2026-08-26 13:37:18,833 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_130808.0167538075
+2026-08-26 13:37:20,378 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_130808.0167538075
+2026-08-26 13:37:20,379 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745.0167540047
+2026-08-26 13:37:22,066 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745.0167540047
+2026-08-26 13:37:22,066 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-26 13:37:23,622 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-26 13:37:23,622 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_131811.0167538075
+2026-08-26 13:37:25,198 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_131811.0167538075
+2026-08-26 13:37:25,199 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_131822.0167540047
+2026-08-26 13:37:26,883 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_131822.0167540047
+2026-08-26 13:37:26,884 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_130808_20260826_131933.0167538075
+2026-08-26 13:37:28,462 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742_20260826_130808_20260826_131933.0167538075
+2026-08-26 13:37:28,462 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_130815_20260826_131935.0167540047
+2026-08-26 13:37:30,144 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826110037703.txt_20260826_112217_20260826_115745_20260826_130815_20260826_131935.0167540047
+2026-08-26 13:37:30,267 - FTP_INV_DISCHARGE         - INFO - INICIO limpiar_logs_riorpos
+2026-08-26 13:37:30,949 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP para limpiar logs | host=192.168.151.64
+2026-08-26 13:37:31,648 - FTP_INV_DISCHARGE         - INFO - Log más reciente preservado: /integration/uc4/log/RIORPOS/RIORPOS.log.2026-08-10
+2026-08-26 13:44:12,291 - conexion                  - INFO - Intentando conectar con: iSeries Access ODBC Driver...
+2026-08-26 13:44:14,418 - conexion                  - INFO - [OK] Conectado exitosamente con iSeries Access ODBC Driver
+2026-08-26 13:44:15,503 - FTP_INV_DISCHARGE         - INFO - Se obtuvieron 1000 UPCs de la BD para reemplazo múltiple.
+2026-08-26 13:44:15,505 - FTP_INV_DISCHARGE         - INFO - Rango fechas | desde=2026-08-25 hasta=2026-08-26
+2026-08-26 13:44:16,235 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP | host=192.168.151.64 pais=SV
+2026-08-26 13:44:18,134 - FTP_INV_DISCHARGE         - INFO - Archivo dentro de rango | archivo=InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075 fecha=20260826
+2026-08-26 13:44:18,136 - FTP_INV_DISCHARGE         - INFO - Total archivos a procesar | cantidad=1
+2026-08-26 13:44:18,136 - FTP_INV_DISCHARGE         - INFO - INICIO archivo | path=/integration/uc4/archive/InventoryDischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-26 13:44:19,807 - FTP_INV_DISCHARGE         - INFO - Archivo procesado correctamente | destino=/integration/uc4/in/inventorydischarge/SV/InventoryDischarge_SV_20260826100034676.txt_20260826_102217_20260826_115742.0167538075
+2026-08-26 13:44:19,940 - FTP_INV_DISCHARGE         - INFO - INICIO limpiar_logs_riorpos
+2026-08-26 13:44:20,614 - FTP_INV_DISCHARGE         - INFO - Conectado al FTP para limpiar logs | host=192.168.151.64
+2026-08-26 13:44:21,315 - FTP_INV_DISCHARGE         - INFO - Log más reciente preservado: /integration/uc4/log/RIORPOS/RIORPOS.log.2026-08-10

@@ -87,7 +87,9 @@ def ejecutar_consulta(query: str, params: tuple, nombre_proceso: str) -> list:
 
 def extraer_ktrhp(base: str, fecha: str) -> list:
     """Extrae totales KTRHP por SKU (U71UA) y el Owner (O43UA)"""
-    query = f"SELECT SKUUA, O43UA, SUM(U71UA) AS TOTAL_U71UA FROM {base}.KTRHP WHERE D88UA = ? AND C86UA = 'R' GROUP BY SKUUA, O43UA"
+    query = f"SELECT SKUUA, O43UA, SUM(U71UA) AS TOTAL_U71UA FROM {base}.KTRHP WHERE D88UA = ? AND C86UA = 'R' and O43UA in ('V{base[3]}',' ') GROUP BY SKUUA, O43UA"
+    logger.info(f"query: {query}")
+
     return ejecutar_consulta(query, (fecha,), "KTRHP_POR_SKU")
 
 def extraer_kpuhp(base: str, fecha: str) -> list:
@@ -269,11 +271,16 @@ def main_vendor(BASE="RI14DB", fecha_forzada=None):
     ktrhp_validas, ktrhp_ignoradas = procesar_ktrhp(datos_ktrhp, BASE)
     
     kpuhp_por_sku = dict_kpuhp_por_sku(extraer_kpuhp(BASE, fecha))
+    
+    if not kpuhp_por_sku or not ktrhp_validas:
+        logger.info(f"No hay suficientes datos en KTRHP o KPUHP para la fecha {fecha}. Omitiendo reporte, Jira, correo y AUTOMIR.")
+        return False
+
     analisis = analizar_por_sku(ktrhp_validas, kpuhp_por_sku)
 
     if not analisis:
         logger.info(f"No se encontraron datos de conciliación para la fecha {fecha}. Omitiendo reporte, Jira y correo.")
-        return
+        return False
 
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     carpeta_reportes = os.path.join(base_dir, 'Reportes', 'PO AUTOMATICA')
@@ -380,6 +387,7 @@ def main_vendor(BASE="RI14DB", fecha_forzada=None):
     actualizar_registros_dia_anterior(BASE, fecha, transpo_dinamico)
         
     logger.info("=== FIN CONCILIACIÓN AS400 ===")
+    return True
 
 # ============================================================
 # EJECUCIÓN

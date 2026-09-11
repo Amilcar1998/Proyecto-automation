@@ -14,7 +14,6 @@ if hasattr(sys.stdout, 'reconfigure'):
         sys.stderr.reconfigure(encoding='utf-8')
     except Exception:
         pass
-from flujo_completo import flujo_completo
 from wms_infor.transferencias_wms_infor import procesar_transferencias_wms_infor
 from jira.jira_utilidades import JiraClient
 from ordenes_compra.Validacion_PO import main_PO, procesar_orden_krws
@@ -56,216 +55,177 @@ def obtener_bases_desde_json():
         logger.warning(f"No se pudo leer bases_trabajo: {e}")
     return bases
 
-def main():
-    if len(sys.argv) > 1 and sys.argv[1] == "AUTO":
-        logger.info("--- INICIO MODO AUTOMÁTICO ---")
-        bases = obtener_bases_desde_json()
+def ejecutar_automatizacion():
+    logger.info("--- INICIO MODO AUTOMÁTICO ---")
+    bases = obtener_bases_desde_json()
 
-        for base in bases:
-            base_str = f"RI{base}DB"
-            logger.info(f"=== EJECUTANDO PARA LA BASE: {base_str} ===")
+    for base in bases:
+        base_str = f"RI{base}DB"
+        logger.info(f"=== EJECUTANDO PARA LA BASE: {base_str} ===")
+        sys.stdout.flush()
+        
+        logger.info(f"1. Procesando transferencias WMS-INFOR ({base_str})...")
+        sys.stdout.flush()
+        resultado_trf = procesar_transferencias_wms_infor(BASE=base_str)
+        if resultado_trf is False:
+            logger.info("   -> No se encontraron transferencias WMS-INFOR pendientes.")
             sys.stdout.flush()
             
-            logger.info(f"1. Procesando transferencias WMS-INFOR ({base_str})...")
-            sys.stdout.flush()
-            resultado_trf = procesar_transferencias_wms_infor(BASE=base_str)
-            if resultado_trf is False:
-                logger.info("   -> No se encontraron transferencias WMS-INFOR pendientes.")
-                sys.stdout.flush()
-                
-            logger.info(f"2. Procesando validaciones de PO ({base_str})...")
-            sys.stdout.flush()
-            main_PO(BASE=base_str)
-            
-            logger.info(f"3. Creando PO Automática (Vendor Storage) ({base_str})...")
-            sys.stdout.flush()
-            
-            from ordenes_compra.PO_Automática import extraer_ktrhp, obtener_fecha_proceso
-            
-            fecha = obtener_fecha_proceso()
-            datos_ktrhp = extraer_ktrhp(base_str, fecha)
-            
+        logger.info(f"2. Procesando validaciones de PO ({base_str})...")
+        sys.stdout.flush()
+        main_PO(BASE=base_str)
+        
+        logger.info(f"3. Creando PO Automática (Vendor Storage) ({base_str})...")
+        sys.stdout.flush()
+        
+        from ordenes_compra.PO_Automática import extraer_ktrhp, obtener_fecha_proceso
+        
+        fecha = obtener_fecha_proceso()
+        datos_ktrhp = extraer_ktrhp(base_str, fecha)
+
+        if not datos_ktrhp:
+            logger.info(f"   -> No hay datos en KTRHP para {base_str}. Omitiendo creación de POs y conciliación.")
+        else:
             # Eliminar spools del usuario ELOPEZ
             try:
                 from as400_core.ejecutor_cl import EjecutorCL
                 cl_spool = EjecutorCL()
                 logger.info("   -> Eliminando spools previos del usuario ELOPEZ...")
-                cl_spool.ejecutar("DLTSPLF FILE(*ALL) SELECT(ELOPEZ)")
+                cl_spool.ejecutar("DLTSPLF FILE(*SELECT) SELECT(ELOPEZ)")
             except Exception as e:
                 logger.warning(f"   -> Advertencia al intentar eliminar spools de ELOPEZ: {e}")
             
-            if not datos_ktrhp:
-                logger.info(f"   -> No hay datos en KTRHP para {base_str}. Omitiendo creación de POs.")
-            else:
-                # Generar POS antes de validar
-                comando_pos = f"CALL PGM(RIUNICOM63/SICRT207CL) PARM('{base}' '')"
-                logger.info(f"   -> Ejecutando via SBMJOB: {comando_pos}")
-                try:
-                    from as400_core.ejecutor_cl import EjecutorCL
-                    from conexion_config.conexion import ConexionAS400
-                    import time
-                    
-                    cl = EjecutorCL()
-                    resultado = cl.submit_job(comando_pos, job_name=f"TRANSPO{base}")
-                    
-                    if resultado:
-                        job_name = resultado.get('job_name')
-                        cl.esperar_trabajo(job_name)
-                        
-                except Exception as e:
-                    logger.error(f"   -> Error al ejecutar SBMJOB {comando_pos}: {e}")
-
-            # Dejar que realice las validaciones
+            # Generar POS antes de validar
+            comando_pos = f"CALL PGM(RIUNICOM63/SICRT207CL) PARM('{base}' '')"
+            logger.info(f"   -> Ejecutando via SBMJOB: {comando_pos}")
             try:
-                main_vendor(BASE=base_str)
+                from as400_core.ejecutor_cl import EjecutorCL
+                from conexion_config.conexion import ConexionAS400
+                import time
                 
-                # Ejecutar comando AUTOMIR
-                try:
-                    from as400_core.ejecutor_cl import EjecutorCL
-                    cl_automir = EjecutorCL()
-                    cmd_automir = "CALL PGM(ELOPEZ/AUTOMIR)"
-                    logger.info(f"   -> Ejecutando AUTOMIR via SBMJOB: {cmd_automir}")
-                    cl_automir.submit_job(cmd_automir, job_name="AUTOMIR")
-                except Exception as e:
-                    logger.error(f"   -> Error al ejecutar SBMJOB AUTOMIR: {e}")
+                cl = EjecutorCL()
+                
+                # Cambiar la biblioteca actual antes de ejecutar SBMJOB
+                comando_chg = f"CHGCURLIB CURLIB({base_str})"
+                logger.info(f"   -> Ejecutando previo al job: {comando_chg}")
+                cl.ejecutar(comando_chg)
+                
+                resultado = cl.submit_job(comando_pos, job_name=f"TRANSPO{base}")
+                
+                if resultado:
+                    job_name = resultado.get('job_name')
+                    # Le ponemos un límite de 15 intentos (~4 min) para trabajos rápidos como TRANSPO
+                    cl.esperar_trabajo(job_name, limite_sin_ver=15)
+                    
+            except Exception as e:
+                logger.error(f"   -> Error al ejecutar SBMJOB {comando_pos}: {e}")
+
+            # Dejar que realice las validaciones (Conciliación y AUTOMIR)
+            try:
+                conciliacion_ok = main_vendor(BASE=base_str)
+                
+                # Ejecutar comando AUTOMIR solo si hubo datos de conciliación
+                if conciliacion_ok:
+                    try:
+                        from as400_core.ejecutor_cl import EjecutorCL
+                        cl_automir = EjecutorCL()
+                        cmd_automir = "CALL PGM(ELOPEZ/AUTOMIR)"
+                        logger.info(f"   -> Ejecutando AUTOMIR via SBMJOB: {cmd_automir}")
+                        res_automir = cl_automir.submit_job(cmd_automir, job_name="AUTOMIR")
+                        
+                        if res_automir:
+                            logger.info("   -> AUTOMIR sometido correctamente (no se monitoreará su finalización según configuración).")
+                            # cl_automir.esperar_trabajo("AUTOMIR")
+                    except Exception as e:
+                        logger.error(f"   -> Error al ejecutar SBMJOB AUTOMIR: {e}")
+                else:
+                    logger.info("   -> Omitiendo ejecución de AUTOMIR ya que no hubo datos de conciliación (KTRHP/KPUHP vacíos).")
                     
             except Exception as e:
                 logger.error(f"Error en PO Automática: {e}")
-                
-        logger.info("--- EJECUTANDO COMANDOS FINALES CL ---")
-        try:
-            from as400_core.ejecutor_cl import EjecutorCL
-            cl_executor = EjecutorCL()
             
-            for base in bases:
-                
-                comando_chg = f"CHGCURLIB CURLIB(RI{base}DB)"
-                logger.info(f"   -> Ejecutando: {comando_chg}")
-                cl_executor.ejecutar(comando_chg)
+    logger.info("--- EJECUTANDO COMANDOS FINALES CL ---")
+    try:
+        from as400_core.ejecutor_cl import EjecutorCL
+        cl_executor = EjecutorCL()
+        
+        for base in bases:
+            
+            comando_chg = f"CHGCURLIB CURLIB(RI{base}DB)"
+            logger.info(f"   -> Ejecutando: {comando_chg}")
+            cl_executor.ejecutar(comando_chg)
 
-                comando_final = f"CALL PGM(RIUNICOM63/SIINF001) PARM('{base}')"
-                logger.info(f"   -> Enviando trabajo para país/base {base}: SBMJOB CMD({comando_final})")
-                
-                # Ejecutamos el job
-                resultado_cl = cl_executor.submit_job(comando_final)
-                if resultado_cl:
-                    logger.info(f"   -> Trabajo enviado exitosamente para {base}.")
-                else:
-                    logger.error(f"   -> Error al enviar el trabajo CL para {base}.")
-        except Exception as e:
-            logger.error(f"Error en comando final CL: {e}")
-                
-        logger.info("--- FIN MODO AUTOMÁTICO ---")
-        sys.stdout.flush()  # Forzar la escritura en consola
+            comando_final = f"CALL PGM(RIUNICOM63/SIINF001) PARM('{base}')"
+            logger.info(f"   -> Enviando trabajo para país/base {base}: SBMJOB CMD({comando_final})")
+            
+            # Ejecutamos el job
+            resultado_cl = cl_executor.submit_job(comando_final)
+            if resultado_cl:
+                logger.info(f"   -> Trabajo enviado exitosamente para {base}.")
+            else:
+                logger.error(f"   -> Error al enviar el trabajo CL para {base}.")
+    except Exception as e:
+        logger.error(f"Error en comando final CL: {e}")
+            
+    logger.info("--- FIN MODO AUTOMÁTICO ---")
+    sys.stdout.flush()  # Forzar la escritura en consola
+
+def actualizar_estado(proceso, estado):
+    """
+    Lee o actualiza el estado del proceso en la base de datos de forma atómica.
+    Si estado es None, devuelve el estado actual ('Y' o 'N').
+    Si estado es 'Y' o 'N', lo actualiza.
+    Abre y cierra la conexión inmediatamente para evitar timeouts en procesos largos.
+    """
+    from conexion_config.conexion import ConexionAS400
+    db = ConexionAS400()
+    conexion = db.conectar()
+    if not conexion:
+        logger.error("No se pudo conectar a DB2 para gestión de estado.")
+        return None
+
+    try:
+        with conexion.cursor() as cursor:
+            if estado is None:
+                cursor.execute(f"SELECT ESTADO_ACTIVO FROM ELOPEZ.PROCESO_ESTADO WHERE PROCESO = '{proceso}'")
+                row = cursor.fetchone()
+                return row[0].upper() if row else None
+            else:
+                cursor.execute(f"UPDATE ELOPEZ.PROCESO_ESTADO SET ESTADO_ACTIVO = '{estado}' WHERE PROCESO = '{proceso}'")
+                conexion.commit()
+                return True
+    except Exception as e:
+        logger.error(f"Error gestionando estado {proceso}: {e}")
+        return False
+    finally:
+        db.cerrar_conexion()
+
+def main():
+    if len(sys.argv) <= 1 or sys.argv[1] != "AUTO":
+        logger.warning("El script requiere el argumento 'AUTO' para iniciar. Saliendo...")
+        return
+
+    logger.info("Verificando si hay procesos activos en ELOPEZ.PROCESO_ESTADO...")
+    
+    estado_actual = actualizar_estado('AUTOMATIZACION', None)
+    
+    if estado_actual == 'Y':
+        print("\n[!] ADVERTENCIA: Ya existe un proceso de AUTOMATIZACION en ejecución.")
+        logger.warning("Ejecución detenida: La bandera ESTADO_ACTIVO está en 'Y'.")
         return
         
-    """Menú principal de la aplicación"""
-    while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("\n" + "="*60)
-        print("🚀 SISTEMA DE AUTOMATIZACIÓN AS400")
-        print("="*60)
-        print("1. Ejecutar flujo completo de garantías")
-        print("2. Procesar transferencias WMS-INFOR")
-        print("3. Ejecutar comandos CL en AS400")
-        print("4. Jira independiente")
-        print("5. validacion PO")
-        print("6. PO AUTOMATICA VENDOR")
-        print("0. Salir")
-        print("-"*60)
-        
-        opcion = input("Selecciona una opción (1-6): ").strip()
-        
-        if opcion == "1":
-            print("\nIniciando flujo completo...")
-            flujo_completo()
-            input("\nPresiona Enter para volver al menú...")
-        elif opcion == "2":
-            bases = obtener_bases_desde_json()
-            for base in bases:
-                base_str = f"RI{base}DB"
-                print(f"\nIniciando procesamiento de transferencias WMS-INFOR para {base_str}...")
-                procesar_transferencias_wms_infor(BASE=base_str)
-            input("\nPresiona Enter para volver al menú...")
-        elif opcion == "3":
-            ejecutar_comando_manual()
-            input("\nPresiona Enter para volver al menú...")
-        elif opcion == "4":
-            load = "ASN_04_165569_1"
-            ruta = r"C:\Users\eliseo_lopezp\proyecto1\Reportes\Transferencias_WMS_INFOR_20260116\Reporte_Orden_ASN_04_165569_1_20260116.docx"
+    logger.info("Marcando inicio del proceso (ESTADO_ACTIVO = 'Y')...")
+    if not actualizar_estado('AUTOMATIZACION', 'Y'):
+        print("No se pudo bloquear el proceso en DB2. Saliendo por seguridad.")
+        return
 
-            J = JiraClient()
-            #J.main_jira(load, ruta)
-
-
-        elif opcion =="5":
-            bases = obtener_bases_desde_json()
-            for base in bases:
-                base_str = f"RI{base}DB"
-                print(f"\nIniciando validacion PO para {base_str}...")
-                main_PO(BASE=base_str)
-            input("\nPresiona Enter para volver al menú...")
-
-        elif opcion == "6":
-            bases = obtener_bases_desde_json()
-            for base in bases:
-                base_str = f"RI{base}DB"
-                print(f"\nIniciando PO AUTOMATICA VENDOR para {base_str}...")
-                main_vendor(BASE=base_str)
-            input("\nPresiona Enter para volver al menú...")
-        elif opcion == "0":
-            print(" ¡Hasta luego!")
-            break
-        else:
-            print(" Opción inválida. Intenta de nuevo.")
-            time.sleep(1)
-
-def ejecutar_comando_manual():
-    """Permite al usuario ejecutar comandos CL manualmente"""
-    from as400_core.ejecutor_cl import EjecutorCL
-    
-    print("\n" + "="*60)
-    print("EJECUTAR COMANDOS CL EN AS400")
-    print("="*60)
-    print("Ejemplos de comandos:")
-    print("- CALL PGM(RIUNICOM63/SIWINTRACL) PARM('11')")
-    print("- DSPLIBL")
-    print("- WRKACTJOB")
-    print("\nEscribe 'salir' para volver al menú principal")
-    print("-"*60)
-    
-    cl = EjecutorCL()
-    
-    while True:
-        comando = input("\nComando CL > ").strip()
-        
-        if comando.lower() == 'salir':
-            break
-        
-        if not comando:
-            continue
-            
-        print("\n1. Ejecutar directamente")
-        print("2. Enviar como trabajo (SBMJOB)")
-        opcion = input("Selecciona una opción (1-2): ").strip()
-        
-        if opcion == "1":
-            resultado = cl.ejecutar(comando)
-            if resultado:
-                print("✅ Comando ejecutado correctamente")
-            else:
-                print("❌ Error al ejecutar el comando")
-        elif opcion == "2":
-            job_name = input("Nombre del trabajo (opcional): ").strip()
-            job_name = job_name if job_name else None
-            
-            resultado = cl.submit_job(comando, job_name=job_name)
-            if resultado:
-                print(f"✅ Trabajo enviado: {resultado.get('job_name')}")
-            else:
-                print("❌ Error al enviar el trabajo")
-        else:
-            print("❌ Opción inválida")
+    try:
+        ejecutar_automatizacion()
+    except Exception as e:
+        logger.exception(f"Error general en la automatización: {e}")
+    finally:
+        logger.info("Liberando bandera de ejecución (ESTADO_ACTIVO = 'N')...")
+        actualizar_estado('AUTOMATIZACION', 'N')
 
 if __name__ == "__main__":
     if not os.path.exists('logs'):

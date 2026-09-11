@@ -26,10 +26,12 @@ def extraer_skus(conn,pais_num):
 
     sql=f"""
     SELECT B.SKU_NUMBER AS SKU, CURRENT_PRICE-1 AS PRECIO FROM SUMMER.SKUBARET A INNER JOIN SUMMER.SKU B ON A.SKU_CODE=B.SKU_CODE 
-    INNER JOIN SUMMER.SKU_HIERARCHY SH ON B.SKU_CODE=SH.SKU_CODE inner join RI{pais}DB.KSKUP X ON B.SKU_CODE = X.SKUSK 
+    INNER JOIN SUMMER.SKU_HIERARCHY SH ON B.SKU_CODE=SH.SKU_CODE inner join RI{pais}DB.KSKUP X ON B.SKU_NUMBER = X.SKUSK 
     WHERE A.COMPANY_ID='02' AND A.COUNTRY_ID='0{extrae_num}' AND CURRENT_PRICE>0  AND SH.COMPANY_ID=A.COMPANY_ID AND 
-    SH.COUNTRY_ID=A.COUNTRY_ID AND SKU_TYPE_CODE<>'D' AND X.B34SK>0 AND B.SKU_NUMBER NOT IN(SELECT DISTINCT PBKSKU FROM RI{pais_num}DB.PCPRCBKP 
-    INNER JOIN RI11DB.CONSULRP3 B ON PBKSKU= B.SKU_CORP WHERE COD_DIV ='Y') AND SH.DEPARTMENT_ID <> '725' """
+    SH.COUNTRY_ID=A.COUNTRY_ID AND SKU_TYPE_CODE<>'D'  AND B.SKU_NUMBER NOT IN(SELECT DISTINCT PBKSKU FROM RI{pais_num}DB.PCPRCBKP 
+    INNER JOIN RI11DB.CONSULRP3 B ON PBKSKU= B.SKU_CORP WHERE COD_DIV ='Y' AND PBKSTATUS ='A') AND SH.DEPARTMENT_ID <> '725'  AND CURRENT_PRICE >5
+    AND B.SKU_NUMBER IN (SELECT A.SKUSK FROM RI{pais_num}DB.KSKUP A WHERE A.SRLSK <>'D')
+    """
     print(f"sql : {sql}")
     df=pd.read_sql_query(sql,conn)
     print(f"[DEBUG] SKUs encontrados: {len(df)}")
@@ -100,49 +102,53 @@ try:
 
         country=f"0{pais[-1]}"
 
-        for i in range(1,num_plantillas+1):
-
-            if all_zones and i==1:
-                zonas_loop=zonas_db
+        file_specs = []
+        for i in range(1, num_plantillas + 1):
+            if all_zones and i == 1:
+                file_specs.append({'i': i, 'zona': None, 'sufijo': 'ALLZONES'})
             else:
-                zonas_loop=zonas_usar
+                for zona in zonas_usar:
+                    file_specs.append({'i': i, 'zona': zona, 'sufijo': zona})
 
-            sample=df_skus.sample(
-                n=min(num_lineas,len(df_skus)),
-                random_state=i
-            )
+        unique_skus = df_skus.sample(frac=1, random_state=0).reset_index(drop=True)
+        total_required = len(file_specs) * num_lineas
+        if len(unique_skus) < total_required:
+            print(f"[WARNING] No hay suficientes SKUs únicos para evitar repeticiones entre plantillas. "
+                  f"Se generarán {len(unique_skus)} filas únicas en lugar de {total_required}.")
 
-            for zona in zonas_loop:
+        offset = 0
+        for spec in file_specs:
+            items = unique_skus.iloc[offset:offset + num_lineas]
+            offset += len(items)
+            if items.empty:
+                print(f"[DEBUG] No quedan SKUs únicos para plantilla RI{pais}DB {spec['sufijo']} {spec['i']}")
+                break
 
-                wb = xlwt.Workbook()
-                ws = wb.add_sheet('DATOS')
+            wb = xlwt.Workbook()
+            ws = wb.add_sheet('DATOS')
 
-                headers = ['COUNTRY','COMPANY','ZONE','SKU','PRECIOS']
+            headers = ['COUNTRY','COMPANY','ZONE','SKU','PRECIOS']
+            for col, h in enumerate(headers):
+                ws.write(0, col, h)
 
-                for col, h in enumerate(headers):
-                    ws.write(0, col, h)
+            fila = 1
+            for idx, r in items.iterrows():
+                if spec['zona'] is None:
+                    zona = zonas_db[idx % len(zonas_db)]
+                else:
+                    zona = spec['zona']
 
-                fila = 1
+                ws.write(fila, 0, country)
+                ws.write(fila, 1, '02')
+                ws.write(fila, 2, zona)
+                ws.write(fila, 3, r['SKU'])
+                ws.write(fila, 4, r['PRECIO'])
+                fila += 1
 
-                for _, r in sample.iterrows():
-
-                    ws.write(fila, 0, country)
-                    ws.write(fila, 1, '02')
-                    ws.write(fila, 2, zona)
-                    ws.write(fila, 3, r['SKU'])
-                    ws.write(fila, 4, r['PRECIO'])
-
-                    fila += 1
-
-                sufijo = 'ALLZONES' if all_zones and i == 1 else zona
-                nombre = f'plantilla_RI{pais}DB_{sufijo}_{i}.xls'
-
-
-                ruta = os.path.join(output_dir, nombre)
-
-                wb.save(ruta)
-
-                print(f"[DEBUG] Archivo generado: {ruta} filas={fila-1}")
+            nombre = f'plantilla_RI{pais}DB_{spec["sufijo"]}_{spec["i"]}.xls'
+            ruta = os.path.join(output_dir, nombre)
+            wb.save(ruta)
+            print(f"[DEBUG] Archivo generado: {ruta} filas={fila-1}")
 
 finally:
 

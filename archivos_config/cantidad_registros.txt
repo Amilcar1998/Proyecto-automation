@@ -1,4 +1,4 @@
 # Cantidad máxima de registros sin promoción a procesar
 # Valor por defecto: 200
 # Cambia este número para ajustar la cantidad
-10000
+10

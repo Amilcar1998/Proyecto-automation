@@ -1,0 +1,2 @@
+2026-08-24 09:36:23,310 - jira_utilidades           - INFO - El procesamiento de Jira está deshabilitado en la configuración (habilitar_jira != 'Y'). Saltando creación de tarea.
+2026-08-24 09:45:17,337 - jira_utilidades           - INFO - El procesamiento de Jira está deshabilitado en la configuración (habilitar_jira != 'Y'). Saltando creación de tarea.

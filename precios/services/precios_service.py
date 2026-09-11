@@ -153,7 +153,8 @@ class PreciosService:
             contexto.actjob_resultado = self.repository.esperar_fin_job_actjob(
                 job_name,
                 espera_inicial=self.WAIT_BATCH_INITIAL_SECONDS,
-                espera_segundos=self.WAIT_BATCH_SECONDS,
+                espera_entre_refrescos=self.WAIT_BATCH_SECONDS,
+                espera_post_refresco=5,
                 max_espera_segundos=self.WAIT_BATCH_MAX_SECONDS,
             )
             contexto.programa_finalizado = True

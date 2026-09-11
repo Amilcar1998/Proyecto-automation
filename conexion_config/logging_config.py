@@ -52,21 +52,8 @@ def get_logger(name=None, level=logging.INFO):
         formatter = SimpleFormatter()
 
         try:
-            logs_dir = Path.cwd() / 'logs'
-            logs_dir.mkdir(parents=True, exist_ok=True)
-            date_str = datetime.now().strftime('%Y%m%d')
-            file_path = logs_dir / f"main_{date_str}.log"
-
             root = logging.getLogger()
             root.setLevel(level)
-
-            # Add file handler to root if not present
-            has_file = any(isinstance(h, logging.FileHandler) and Path(getattr(h, 'baseFilename', '')).resolve() == file_path.resolve() for h in root.handlers)
-            if not has_file:
-                fh = logging.FileHandler(str(file_path), encoding='utf-8')
-                fh.setFormatter(formatter)
-                fh.setLevel(level)
-                root.addHandler(fh)
 
             # Add stream handler to root if not present
             has_stream = any(isinstance(h, logging.StreamHandler) for h in root.handlers)

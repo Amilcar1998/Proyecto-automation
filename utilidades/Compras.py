@@ -107,7 +107,7 @@ for (id_valor, tipo_valor, pais_valor, predistribuido_valor), group in df.groupb
 
     # Escribir los datos a partir de la fila 2
     for _, row in group.iterrows():
-        sheet.write(fila, 0, 1)  # PAIS
+        sheet.write(fila, 0, 4)  # PAIS
         sheet.write(fila, 1, 2)  # COMPANIA
         sheet.write(fila, 2, row['TIENDA'])  # TIENDA
         sheet.write(fila, 3, row['SKU'])  # SKU

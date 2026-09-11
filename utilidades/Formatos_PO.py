@@ -143,14 +143,18 @@ class GeneradorPlantillasOC:
         country = datos["country_sql"]
 
         sql = f"""
-            SELECT c.UPC_CORP, c.SKU_CORP AS SKU, c.DES_ESPA, X.CURRENT_PRICE * 2 AS PRECIO, c.DES_CLA, v1.NAME_VENDOR AS VENDOR_1, v2.NAME_VENDOR AS VENDOR_2
-            FROM RI11DB.CONSULRP3 c INNER JOIN SUMMER.SKU A ON c.SKU_CORP = A.SKU_NUMBER INNER JOIN SUMMER.SKU_HIERARCHY sh ON A.SKU_CODE = SH.SKU_CODE
-            INNER JOIN SUMMER.SKU_INI_PREVIOUS_AUTORIZATION sipa ON c.SKU_CORP = sipa.SKU_NUMBER
-            LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v1 ON v1.DEFINITION_VENDOR = '1' AND v1.SKU_ID = sipa.SKU_ID LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v2 ON v2.DEFINITION_VENDOR = '2'
-            AND v2.SKU_ID = sipa.SKU_ID LEFT JOIN SUMMER.SKU_INI_SOURCE_VENDOR sc ON sc.ID_VENDOR = v2.CODE_VENDOR INNER JOIN SUMMER.SKUBARET X ON A.SKU_CODE = X.SKU_CODE
-            WHERE c.DES_ESPA <> ' ' AND v2.NAME_VENDOR IS NOT NULL AND SH.COMPANY_ID = X.COMPANY_ID AND SH.COUNTRY_ID = X.COUNTRY_ID AND X.COMPANY_ID = '{company}' 
-            AND X.COUNTRY_ID = '{country}' AND sh.SKU_TYPE_CODE IN ('A',' ') AND CREATE_DATE <='2025-10-01' AND CURRENT_PRICE > 0 AND v1.NAME_VENDOR <> 'REGAL WORLDWIDE TRADE'
-            GROUP BY c.UPC_CORP, c.SKU_CORP, c.DES_ESPA, c.DES_CLA, v1.NAME_VENDOR, v2.NAME_VENDOR, CURRENT_PRICE
+SELECT c.UPC_CORP, c.SKU_CORP AS SKU, c.DES_ESPA, X.CURRENT_PRICE * 2 AS PRECIO, Y1.LIST_COST +10 AS COSTO, c.DES_CLA, v1.NAME_VENDOR AS VENDOR_1, v2.NAME_VENDOR AS VENDOR_2
+FROM RI11DB.CONSULRP3 c INNER JOIN SUMMER.SKU A ON c.SKU_CORP = A.SKU_NUMBER INNER 
+JOIN SUMMER.SKU_HIERARCHY sh ON A.SKU_CODE = SH.SKU_CODE
+INNER JOIN SUMMER.SKU_INI_PREVIOUS_AUTORIZATION sipa ON c.SKU_CORP = sipa.SKU_NUMBER
+LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v1 ON v1.DEFINITION_VENDOR = '1' AND v1.SKU_ID = sipa.SKU_ID 
+LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v2 ON v2.DEFINITION_VENDOR = '2' AND v2.SKU_ID = sipa.SKU_ID 
+LEFT JOIN SUMMER.SKU_INI_SOURCE_VENDOR sc ON sc.ID_VENDOR = v2.CODE_VENDOR 
+INNER JOIN SUMMER.SKUBARET X ON A.SKU_CODE = X.SKU_CODE
+INNER JOIN SUMMER.SKU_BASIC_COST Y1 ON Y1.SKU_CODE = X.SKU_CODE AND Y1.COMPANY_ID = X.COMPANY_ID AND Y1.COUNTRY_ID = X.COUNTRY_ID 
+WHERE c.DES_ESPA <> ' ' AND v2.NAME_VENDOR IS NOT NULL AND SH.COMPANY_ID = X.COMPANY_ID AND SH.COUNTRY_ID = X.COUNTRY_ID AND X.COMPANY_ID = '{company}' 
+AND X.COUNTRY_ID = '{country}' AND sh.SKU_TYPE_CODE IN ('A',' ') AND CREATE_DATE <='2025-10-01' AND CURRENT_PRICE > 0 AND v1.NAME_VENDOR <> 'REGAL WORLDWIDE TRADE'
+GROUP BY c.UPC_CORP, c.SKU_CORP, c.DES_ESPA, c.DES_CLA, v1.NAME_VENDOR, v2.NAME_VENDOR, CURRENT_PRICE, Y1.LIST_COST
         """
         print(f"SQL: {sql}")
         if limite is not None and limite > 0:
@@ -165,14 +169,18 @@ class GeneradorPlantillasOC:
         country = datos["country_sql"]
 
         sql = f"""
-            SELECT c.UPC_CORP, c.SKU_CORP AS SKU, c.DES_ESPA, X.CURRENT_PRICE * 2 AS PRECIO, c.DES_CLA, v1.NAME_VENDOR AS VENDOR_1, v2.NAME_VENDOR AS VENDOR_2
-            FROM RI11DB.CONSULRP3 c INNER JOIN SUMMER.SKU A ON c.SKU_CORP = A.SKU_NUMBER INNER JOIN SUMMER.SKU_HIERARCHY sh ON A.SKU_CODE = SH.SKU_CODE
-            INNER JOIN SUMMER.SKU_INI_PREVIOUS_AUTORIZATION sipa ON c.SKU_CORP = sipa.SKU_NUMBER
-            LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v1 ON v1.DEFINITION_VENDOR = '1' AND v1.SKU_ID = sipa.SKU_ID LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v2 ON v2.DEFINITION_VENDOR = '2'
-            AND v2.SKU_ID = sipa.SKU_ID LEFT JOIN SUMMER.SKU_INI_SOURCE_VENDOR sc ON sc.ID_VENDOR = v2.CODE_VENDOR INNER JOIN SUMMER.SKUBARET X ON A.SKU_CODE = X.SKU_CODE
-            WHERE c.DES_ESPA <> ' ' AND v2.NAME_VENDOR IS NOT NULL AND SH.COMPANY_ID = X.COMPANY_ID AND SH.COUNTRY_ID = X.COUNTRY_ID AND X.COMPANY_ID = '{company}' and 
-            SKU_TYPE_CODE IN ('A',' ') AND CREATE_DATE <='2025-10-01' AND X.COUNTRY_ID = '{country}' AND CURRENT_PRICE > 0 AND v1.NAME_VENDOR = 'REGAL WORLDWIDE TRADE'
-            GROUP BY c.UPC_CORP, c.SKU_CORP, c.DES_ESPA, c.DES_CLA, v1.NAME_VENDOR, v2.NAME_VENDOR, CURRENT_PRICE
+SELECT c.UPC_CORP, c.SKU_CORP AS SKU, c.DES_ESPA, X.CURRENT_PRICE * 2 AS PRECIO, Y1.LIST_COST AS COSTO, c.DES_CLA, v1.NAME_VENDOR AS VENDOR_1, v2.NAME_VENDOR AS VENDOR_2
+FROM RI11DB.CONSULRP3 c INNER JOIN SUMMER.SKU A ON c.SKU_CORP = A.SKU_NUMBER 
+INNER JOIN SUMMER.SKU_HIERARCHY sh ON A.SKU_CODE = SH.SKU_CODE
+INNER JOIN SUMMER.SKU_INI_PREVIOUS_AUTORIZATION sipa ON c.SKU_CORP = sipa.SKU_NUMBER
+LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v1 ON v1.DEFINITION_VENDOR = '1' AND v1.SKU_ID = sipa.SKU_ID 
+LEFT JOIN SUMMER.SKU_INI_SKU_VENDOR v2 ON v2.DEFINITION_VENDOR = '2'
+AND v2.SKU_ID = sipa.SKU_ID LEFT JOIN SUMMER.SKU_INI_SOURCE_VENDOR sc ON sc.ID_VENDOR = v2.CODE_VENDOR 
+INNER JOIN SUMMER.SKUBARET X ON A.SKU_CODE = X.SKU_CODE
+INNER JOIN SUMMER.SKU_BASIC_COST Y1 ON Y1.SKU_CODE = X.SKU_CODE AND Y1.COMPANY_ID = X.COMPANY_ID AND Y1.COUNTRY_ID = X.COUNTRY_ID 
+WHERE c.DES_ESPA <> ' ' AND v2.NAME_VENDOR IS NOT NULL AND SH.COMPANY_ID = X.COMPANY_ID AND SH.COUNTRY_ID = X.COUNTRY_ID AND X.COMPANY_ID = '{company}' and 
+SKU_TYPE_CODE IN ('A',' ') AND CREATE_DATE <='2025-10-01' AND X.COUNTRY_ID = '{country}' AND CURRENT_PRICE > 0 AND v1.NAME_VENDOR = 'REGAL WORLDWIDE TRADE'
+GROUP BY c.UPC_CORP, c.SKU_CORP, c.DES_ESPA, c.DES_CLA, v1.NAME_VENDOR, v2.NAME_VENDOR, CURRENT_PRICE , Y1.LIST_COST
         """
 
         if limite is not None and limite > 0:
@@ -228,7 +236,8 @@ class GeneradorPlantillasOC:
                     "TALLA": "",
                     "MISELANEO": "",
                     "UNIDADES": unidades_default,
-                    "PRECIO": row.get("PRECIO", "")
+                    "PRECIO": row.get("PRECIO", ""),
+                    "COSTO": row.get("COSTO", "")
                 })
 
         if df_tiendas.empty:
@@ -237,6 +246,7 @@ class GeneradorPlantillasOC:
             for _, row in df_importados.iterrows():
                 sku = limpiar_texto(row.get("SKU", ""))
                 precio = row.get("PRECIO", "")
+                costo = row.get("COSTO", "")
                 unidades = row.get("CANTIDADES", unidades_default)
 
                 for _, tienda_row in df_tiendas.iterrows():
@@ -254,7 +264,8 @@ class GeneradorPlantillasOC:
                         "TALLA": "",
                         "MISELANEO": "",
                         "UNIDADES": unidades,
-                        "PRECIO": precio
+                        "PRECIO": precio,
+                        "COSTO": costo
                     })
 
         df_resultado = pd.DataFrame(resultado, columns=[
@@ -266,7 +277,8 @@ class GeneradorPlantillasOC:
             "TALLA",
             "MISELANEO",
             "UNIDADES",
-            "PRECIO"
+            "PRECIO",
+            "COSTO"
         ])
 
         logger.info(f"Total filas preparadas para salida en {base}: {len(df_resultado)}")
@@ -282,6 +294,13 @@ class GeneradorPlantillasOC:
         sheet.write(0, 6, 'MISELANEO')
         sheet.write(0, 7, 'UNIDADES')
         sheet.write(0, 8, 'PRECIO')
+
+    def _escribir_encabezados_costo_xls(self, sheet):
+        sheet.write(0, 0, 'PAIS')
+        sheet.write(0, 1, 'COMPAÑÍA')
+        sheet.write(0, 2, 'SKU_NUMBER')
+        sheet.write(0, 3, 'RETAIL')
+        sheet.write(0, 4, 'COSTO')
 
     def _obtener_ruta_unica(self, output_dir, nombre_base):
         ruta = os.path.join(output_dir, nombre_base)
@@ -321,7 +340,29 @@ class GeneradorPlantillasOC:
         ruta = self._obtener_ruta_unica(output_dir, nombre)
         wb.save(ruta)
 
-        logger.info(f"Archivo generado: {ruta} | filas={len(bloque)}")
+        return ruta
+
+    def _guardar_bloque_costo_xls(self, bloque, output_dir, base, archivo_idx):
+        wb = xlwt.Workbook()
+        sheet = wb.add_sheet('DATOS')
+        self._escribir_encabezados_costo_xls(sheet)
+
+        # Dejar solo 1 fila por SKU para no repetir información en la plantilla de costos
+        bloque_unico = bloque.drop_duplicates(subset=['SKU'])
+
+        fila = 1
+        for _, row in bloque_unico.iterrows():
+            sheet.write(fila, 0, row.get("PAIS", ""))
+            sheet.write(fila, 1, row.get("COMPANIA", ""))
+            sheet.write(fila, 2, limpiar_texto(row.get("SKU", "")))
+            sheet.write(fila, 3, "")  # RETAIL NO LLEVARÁ NADA
+            sheet.write(fila, 4, row.get("COSTO", ""))
+            fila += 1
+
+        nombre = f"plantilla_{base}_costo_{archivo_idx}.xls"
+        ruta = self._obtener_ruta_unica(output_dir, nombre)
+        wb.save(ruta)
+
         return ruta
 
     def exportar_xls_por_bloques(self, df_resultado, output_dir, base, limite_lineas=1000):
@@ -344,8 +385,9 @@ class GeneradorPlantillasOC:
         for inicio in range(0, total_filas, limite_lineas):
             fin = inicio + limite_lineas
             bloque = df_resultado.iloc[inicio:fin].copy()
-            ruta = self._guardar_bloque_xls(bloque, output_dir, base, archivo_idx)
-            archivos_generados.append(ruta)
+            ruta_precio = self._guardar_bloque_xls(bloque, output_dir, base, archivo_idx)
+            ruta_costo = self._guardar_bloque_costo_xls(bloque, output_dir, base, archivo_idx)
+            archivos_generados.extend([ruta_precio, ruta_costo])
             archivo_idx += 1
 
         return archivos_generados
@@ -392,8 +434,9 @@ class GeneradorPlantillasOC:
                 )
                 break
 
-            ruta = self._guardar_bloque_xls(bloque, output_dir, base, archivo_idx)
-            archivos_generados.append(ruta)
+            ruta_precio = self._guardar_bloque_xls(bloque, output_dir, base, archivo_idx)
+            ruta_costo = self._guardar_bloque_costo_xls(bloque, output_dir, base, archivo_idx)
+            archivos_generados.extend([ruta_precio, ruta_costo])
             inicio = fin
 
         return archivos_generados
@@ -468,36 +511,26 @@ def main():
     uid = "ELOPEZ"
     pwd = "MAY2024"
 
-    bases = ["RI11DB", "RI12DB", "RI13DB"]
+    bases = ["RI11DB", "RI12DB", "RI13DB","RI14DB"]
 
     salida_root = os.path.abspath("salida_plantillas")
 
-    limite_importadas = 100
-    limite_locales = 100
-    limite_tiendas_predistribucion = 5
+    limite_importadas = 10
+    limite_locales = 10
+    limite_tiendas_predistribucion = 1
     limite_lineas_archivo = 1000
     incluir_locales = False
-    unidades_default = 100
+    unidades_default = 10
 
     # Si quieres exactamente 100 archivos por base, usa esto:
-    cantidad_archivos_fija = 10
+    cantidad_archivos_fija = None
 
     proceso = GeneradorPlantillasOC(dsn=dsn, uid=uid, pwd=pwd)
 
     try:
         proceso.conectar()
 
-        resultados = proceso.procesar_bases(
-            bases=bases,
-            output_dir=salida_root,
-            limite_importadas=limite_importadas,
-            limite_locales=limite_locales,
-            limite_tiendas_predistribucion=limite_tiendas_predistribucion,
-            limite_lineas_archivo=limite_lineas_archivo,
-            incluir_locales=incluir_locales,
-            unidades_default=unidades_default,
-            cantidad_archivos_fija=cantidad_archivos_fija
-        )
+        resultados = proceso.procesar_bases(bases=bases,output_dir=salida_root,limite_importadas=limite_importadas,limite_locales=limite_locales,limite_tiendas_predistribucion=limite_tiendas_predistribucion,limite_lineas_archivo=limite_lineas_archivo,incluir_locales=incluir_locales,unidades_default=unidades_default,cantidad_archivos_fija=cantidad_archivos_fija)
 
         print("\nResumen:")
         for r in resultados:

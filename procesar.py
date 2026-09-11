@@ -3,6 +3,8 @@ import sys
 from datetime import datetime
 
 from precios.controllers.precios_controller import PreciosController
+from conexion_config.conexion import ConexionAS400
+import logging as _logging
 
 
 logging.basicConfig(
@@ -12,7 +14,7 @@ logging.basicConfig(
 
 
 def _parsear_argumentos():
-    base = "RI11DB"
+    base = "RI14DB"
     cps = None
 
     argumentos = sys.argv[1:]
@@ -63,4 +65,18 @@ def main_precios():
 
 
 if __name__ == "__main__":
-    main_precios()
+    try:
+        main_precios()
+    finally:
+        try:
+            ConexionAS400().cerrar_conexion()
+        except Exception:
+            pass
+        try:
+            _logging.shutdown()
+        except Exception:
+            pass
+        try:
+            sys.exit(0)
+        except SystemExit:
+            raise

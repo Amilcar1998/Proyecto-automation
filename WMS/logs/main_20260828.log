@@ -1,0 +1,18 @@
+2026-08-28 11:36:24,219 - jira_utilidades           - INFO - Iniciando a generar la Tarea en Jira para la base RI14DB
+2026-08-28 11:36:25,446 - jira_utilidades           - INFO - Status Code: 201
+2026-08-28 11:36:25,446 - jira_utilidades           - INFO - Clave generada correctamente: ML-949
+2026-08-28 11:36:25,447 - jira_utilidades           - INFO - Tarea creada correctamente: ML-949
+2026-08-28 11:36:26,416 - jira_utilidades           - INFO - Evidencia subida correctamente a ML-949
+2026-08-28 11:36:26,726 - jira_utilidades           - INFO - Transiciones disponibles: ['In Progress', 'Aborted']
+2026-08-28 11:36:27,336 - jira_utilidades           - INFO - Ticket ML-949 movido a 'In Progress'
+2026-08-28 11:36:27,620 - jira_utilidades           - INFO - Transiciones disponibles: ['On Hold', 'Done', 'Aborted']
+2026-08-28 11:36:28,215 - jira_utilidades           - INFO - Ticket ML-949 movido a 'Done'
+2026-08-28 11:36:28,215 - jira_utilidades           - INFO - Ticket ML-949 finalizado
+2026-08-28 11:36:28,339 - notificaciones_correo     - INFO - Iniciando proceso de envío de correo a través de NotificadorCorreo...
+2026-08-28 11:36:28,445 - notificaciones_correo     - INFO - Buscando archivo de destinatarios en: C:\Users\eliseo_lopezp\proyecto1\archivos_config\destinatarios_flujos.json
+2026-08-28 11:36:28,446 - notificaciones_correo     - INFO - Destinatarios encontrados en archivo: ['eliseo_lopezp@unicomer.com', 'natali_maldonado@unicomer.com', 'dina_martinez@unicomer.com', 'alejandra_valle@unicomer.com', 'adriana_aguilar@unicomer.com', 'jorge_elias@outsource.unicomer.com', 'joseluis_perezm@unicomer.com', 'sonia_ramos@outsource.unicomer.com', 'christian_landaverde@outsource.unicomer.com']
+2026-08-28 11:36:29,040 - notificaciones_correo     - INFO - Firma nativa con imágenes extraída exitosamente.
+2026-08-28 11:36:29,341 - notificaciones_correo     - INFO - Adjunto agregado: C:\Users\eliseo_lopezp\proyecto1\WMS\transferencias.xlsx
+2026-08-28 11:36:30,342 - notificaciones_correo     - INFO - Enviando correo a 9 destinatarios con 1 adjuntos...
+2026-08-28 11:36:34,672 - notificaciones_correo     - INFO - Sincronización manual disparada con éxito.
+2026-08-28 11:36:34,672 - notificaciones_correo     - INFO - [OK] Correo enviado exitosamente a: eliseo_lopezp@unicomer.com, natali_maldonado@unicomer.com, dina_martinez@unicomer.com, alejandra_valle@unicomer.com, adriana_aguilar@unicomer.com, jorge_elias@outsource.unicomer.com, joseluis_perezm@unicomer.com, sonia_ramos@outsource.unicomer.com, christian_landaverde@outsource.unicomer.com

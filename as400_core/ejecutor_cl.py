@@ -122,6 +122,10 @@ class EjecutorCL:
             sbmjob_cmd += f" JOBQ({job_queue})"
         if job_desc:
             sbmjob_cmd += f" JOBD({job_desc})"
+            
+        # IMPRIMIR EXACTAMENTE LO QUE SE ENVÍA PARA VERIFICACIÓN DEL USUARIO
+        self.logger.info(f"EJECUTANDO EXACTAMENTE: {sbmjob_cmd}")
+        print(f"\n[SBMJOB ENVIADO A AS400] {sbmjob_cmd}\n")
 
         # 3. Preparar ejecución
         longitud = len(sbmjob_cmd)
@@ -138,21 +142,32 @@ class EjecutorCL:
             }
         return False
 
-    def esperar_trabajo(self, job_name: str, intervalo_segundos: int = 10):
+    def esperar_trabajo(self, job_name: str, intervalo_segundos: int = 15, limite_sin_ver: int = None):
         """
-        Monitorea un trabajo (SBMJOB) revisando si existe en la tabla ELOPEZ.DSPPOL.
-        Si el trabajo existe en la tabla, significa que sigue activo.
+        Monitorea la ejecución de un trabajo comprobando la tabla ELOPEZ.DSPPOL.
+        Se queda en un bucle consultando la tabla hasta que el job desaparezca.
+        Si limite_sin_ver se define, abortará la espera si el job no aparece tras N intentos.
         """
-        import time
-        self.logger.info(f"Esperando finalización del trabajo {job_name}...")
+        mensaje_inicio = f"Esperando finalización del trabajo {job_name}..."
+        self.logger.info(mensaje_inicio)
+        print(f"\n[MONITOREO] {mensaje_inicio}")
         
-        # Damos tiempo a que el trabajo ingrese a la cola y se active
-        time.sleep(5)
+        # Damos tiempo a que el trabajo ingrese a la cola y se active (15 seg en lugar de 5 para evitar que se salte por estar en JOBQ)
+        time.sleep(15)
         
         conexion = self.db_manager.conectar()
+        visto_activo = False
+        intentos_sin_ver = 0
         
         while True:
             try:
+                print(f"[MONITOREO] Verificando estado activo de {job_name} en AS400...")
+                # Refrescar la tabla ELOPEZ.DSPPOL enviando el comando como SBMJOB
+                self.ejecutar("SBMJOB CMD(CALL PGM(ELOPEZ/ACTJOB)) JOB(CHKACTJOB)")
+                
+                # Dar tiempo a que el job CHKACTJOB termine y llene la tabla
+                time.sleep(5)
+                
                 with conexion.cursor() as cursor:
                     # Aplicamos filtrado directo en SQL con LIKE para traer la línea del job
                     cursor.execute(f"SELECT DSPPOL FROM ELOPEZ.DSPPOL WHERE DSPPOL LIKE '%{job_name}%'")
@@ -165,16 +180,24 @@ class EjecutorCL:
                             self.logger.error(f"El trabajo {job_name} se encuentra detenido por un MENSAJE DE ERROR.")
                             return False
                         activo = True
+                        visto_activo = True
                     else:
                         activo = False
                 
                 if not activo:
-                    self.logger.info(f"Trabajo {job_name} finalizado correctamente.")
-                    return True
+                    if visto_activo:
+                        mensaje_fin = f"Trabajo {job_name} finalizado correctamente (ya no está activo)."
+                        self.logger.info(mensaje_fin)
+                        print(f"[MONITOREO] {mensaje_fin}\n")
+                        return True
+                    else:
+                        intentos_sin_ver += 1
+                        print(f"[MONITOREO] El trabajo {job_name} aún no se ha detectado activo (intento {intentos_sin_ver}). Puede que siga en cola...")
+                        if limite_sin_ver is not None and intentos_sin_ver >= limite_sin_ver:
+                            print(f"[MONITOREO] Máximo de intentos alcanzado esperando que {job_name} inicie. Se asume que completó demasiado rápido.")
+                            return True
                     
             except Exception as e:
                 self.logger.warning(f"Advertencia al monitorear spool del trabajo {job_name}: {e}")
                 
             time.sleep(intervalo_segundos)
-
-    
