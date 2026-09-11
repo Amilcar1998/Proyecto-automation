@@ -1,0 +1,393 @@
+2026-09-10 17:42:25,617 - INFO - Bloqueo de suspensión de pantalla ACTIVADO exitosamente.
+2026-09-10 17:42:45,642 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:42:45,834 - INFO - [OK] Click en 'SUMMER' realizado
+2026-09-10 17:42:47,764 - INFO - [OK] Click en 'OCEANO' realizado
+2026-09-10 17:42:50,766 - INFO - Se encontraron 4 archivo(s) .xls para procesar.
+2026-09-10 17:42:50,767 - INFO - --- INICIANDO FLUJO 1: CREACIÓN Y AUTORIZACIÓN DE POs ---
+2026-09-10 17:42:50,767 - INFO - ============================================================
+2026-09-10 17:42:50,767 - INFO - [PROCESANDO] [1/4] (Importada): 4_Plantilla.xls
+2026-09-10 17:42:50,767 - INFO - ============================================================
+2026-09-10 17:42:52,830 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:42:53,141 - INFO - [OK] Click en 'Crear PO' realizado
+2026-09-10 17:42:55,329 - INFO - [OK] Click en 'Digitar PO' (Crear PO Venta) realizado
+2026-09-10 17:43:01,583 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:43:09,307 - INFO - Descripción del PO ingresada correctamente.
+2026-09-10 17:43:10,586 - INFO - Nicaragua seleccionado.
+2026-09-10 17:43:12,809 - INFO - Clic en El Salvador realizado para desmarcarlo.
+2026-09-10 17:43:13,814 - WARNING - Alerta detectada: '¿Está seguro que Desea Eliminar el País?'. Aceptando...
+2026-09-10 17:43:13,816 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:43:15,826 - WARNING - Alerta detectada: 'Esta acción eliminará todos los registros de la Orden del país seleccionado.'. Aceptando...
+2026-09-10 17:43:15,830 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:43:20,852 - INFO - Esperando que finalice la inicialización del formulario de país...
+2026-09-10 17:43:27,334 - INFO -  🔹 Ingresando Proveedor: 010479
+2026-09-10 17:43:27,950 - INFO - [Proveedor] (<input> #data04VendorCode) reflejado en DOM: '010479'
+2026-09-10 17:43:27,994 - INFO -  🔹 Ingresando Comprador: 710
+2026-09-10 17:43:28,845 - INFO - [Comprador] (<input> #data04BuyerCode) reflejado en DOM: '710'
+2026-09-10 17:43:28,845 - INFO -  🔹 Ingresando Evento: 21
+2026-09-10 17:43:30,679 - INFO - [Evento] (<input> #data04EventCode) reflejado en DOM: '21'
+2026-09-10 17:43:30,680 - INFO -  🔹 Ingresando Bodega: 99
+2026-09-10 17:43:31,625 - INFO - [Bodega] (<input> #data04WarehouseCode) reflejado en DOM: '99'
+2026-09-10 17:43:32,315 - INFO - [Fecha Embarque] (<input> #data04ShipDate) reflejado en DOM: '20260910'
+2026-09-10 17:43:33,030 - INFO - [Fecha Recepción] (<input> #data04ExpectedReceiptDate) reflejado en DOM: '20260913'
+2026-09-10 17:43:33,703 - INFO - [Fecha Distribución] (<input> #data04DistributedDate) reflejado en DOM: '20260915'
+2026-09-10 17:43:34,427 - INFO - [Fecha Cancelación] (<input> #data04CancelationDate) reflejado en DOM: '20260917'
+2026-09-10 17:43:35,074 - INFO - [Fecha OTB] (<input> #data04OtbDate1) reflejado en DOM: '202609'
+2026-09-10 17:43:35,797 - INFO - [Términos de Pago] (<input> #data04TermNumberDays1) reflejado en DOM: '30'
+2026-09-10 17:43:36,385 - INFO - [Correo Electrónico] (<input> #data04PoEmail) reflejado en DOM: 'eliseo_lopezp@unicomer.com'
+2026-09-10 17:43:36,579 - INFO - Tipo PO configurado como: Importada
+2026-09-10 17:43:38,581 - INFO -  🔹 Ingresando Proveedor Sugerido (RWT): 006227
+2026-09-10 17:43:39,315 - INFO - [Proveedor Sugerido / RWT] (<input> #data04Svnhprm) reflejado en DOM: '006227'
+2026-09-10 17:43:39,315 - INFO - Esperando respuesta AJAX de Vendor Site Code (getSiteCode)...
+2026-09-10 17:43:42,482 - INFO - Vendor Site Code seleccionado exitosamente: 'US_RWT_MERCADO'
+2026-09-10 17:43:42,493 - INFO - Todos los datos del formulario fueron procesados correctamente.
+2026-09-10 17:43:47,494 - INFO - PO ingresado exitosamente
+2026-09-10 17:43:47,494 - INFO - Buscando y haciendo clic en el botón 'Continuar'...
+2026-09-10 17:43:47,539 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:43:47,789 - INFO - Clic en 'Continuar' (ID='next') realizado.
+2026-09-10 17:43:50,790 - INFO - Buscando y haciendo clic en el botón 'Importar SKU'...
+2026-09-10 17:43:50,865 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:43:54,982 - INFO - Clic en 'Importar SKU' realizado con éxito.
+2026-09-10 17:43:56,983 - INFO - Iniciando proceso de importación de archivo SKU...
+2026-09-10 17:43:56,984 - INFO - Cambiando al iframe 'frameImporSkuXlsF1'...
+2026-09-10 17:43:57,028 - INFO - Buscando el campo de entrada de archivo (input[type='file'])...
+2026-09-10 17:43:57,553 - INFO - Asignando ruta: 'C:\Users\eliseo_lopezp\automatizacion\archivos\IMPORTADA\4_Plantilla.xls'
+2026-09-10 17:43:58,604 - INFO - Archivo asignado en el input. Valor: 'C:\fakepath\4_Plantilla.xls'
+2026-09-10 17:43:58,605 - INFO - Buscando el botón para enviar el archivo (Submit)...
+2026-09-10 17:43:58,991 - INFO - Clic en el botón de envío 'Submit' realizado.
+2026-09-10 17:43:58,991 - INFO - Esperando respuesta del servidor...
+2026-09-10 17:43:59,005 - INFO - Confirmación recibida: El archivo se procesó en el backend.
+2026-09-10 17:43:59,010 - INFO - Buscando y haciendo clic en el botón 'Cerrar' del diálogo...
+2026-09-10 17:44:09,499 - WARNING - No se pudo hacer clic en el botón 'Cerrar' de forma normal. Intentando forzar el clic con JavaScript.
+2026-09-10 17:44:09,539 - INFO - Diálogo de importación cerrado forzando el clic con JavaScript.
+2026-09-10 17:44:09,567 - INFO - El cuadro de diálogo de importación se ha cerrado por completo.
+2026-09-10 17:44:10,657 - INFO - 📦 Número maestro de PO extraído exitosamente: '0200745246'
+2026-09-10 17:44:10,657 - INFO - PO 0200745246 extraído. Guardando inmediatamente en JSON por si ocurre un fallo...
+2026-09-10 17:44:10,930 - INFO - Click en 'Resumen de Orden de Compra'realizado
+2026-09-10 17:44:31,599 - INFO - Click en 'Enviar a Aprobación' (resumen) realizado
+2026-09-10 17:44:34,617 - INFO - Procediendo a autorizar la PO 0200745246 desde el menú...
+2026-09-10 17:44:34,682 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:44:34,964 - INFO - Clic en 'ADMINISTRAR PO' (Titulo8) realizado.
+2026-09-10 17:44:36,149 - INFO - Clic en menú 'Autorizar PO' (Titulo8Opcion71) realizado.
+2026-09-10 17:44:38,206 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:44:39,036 - INFO - Búsqueda de PO 0200745246 para autorizar enviada.
+2026-09-10 17:44:40,236 - INFO - Checkbox de la PO 0200745246 seleccionado.
+2026-09-10 17:44:41,957 - INFO - Clic en 'Aceptar' (acceptButton) realizado para autorizar (con espera explícita).
+2026-09-10 17:44:43,972 - INFO - Clic en 'Cerrar' (jQuery UI dialog) realizado con éxito mediante JS.
+2026-09-10 17:44:44,004 - INFO - El cuadro de diálogo se ha cerrado por completo.
+2026-09-10 17:44:44,019 - INFO - La capa de carga posterior a la autorización ha desaparecido.
+2026-09-10 17:44:45,022 - INFO - [EXITO] PO (Importada) N° Maestro [0200745246] procesada (Creada y Autorizada) para: 4_Plantilla.xls
+2026-09-10 17:44:48,023 - INFO - ============================================================
+2026-09-10 17:44:48,023 - INFO - [PROCESANDO] [2/4] (Importada): 5_Plantilla.xls
+2026-09-10 17:44:48,023 - INFO - ============================================================
+2026-09-10 17:44:50,083 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:44:50,113 - INFO - [OK] Submenú 'Crear PO' ya se encuentra desplegado.
+2026-09-10 17:45:18,353 - INFO - [OK] Click en 'Digitar PO' (Crear PO Venta) realizado
+2026-09-10 17:45:22,423 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:45:29,620 - INFO - Descripción del PO ingresada correctamente.
+2026-09-10 17:45:31,054 - INFO - Nicaragua seleccionado.
+2026-09-10 17:45:33,299 - INFO - Clic en El Salvador realizado para desmarcarlo.
+2026-09-10 17:45:34,305 - WARNING - Alerta detectada: '¿Está seguro que Desea Eliminar el País?'. Aceptando...
+2026-09-10 17:45:34,307 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:45:36,312 - WARNING - Alerta detectada: 'Esta acción eliminará todos los registros de la Orden del país seleccionado.'. Aceptando...
+2026-09-10 17:45:36,315 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:45:41,340 - INFO - Esperando que finalice la inicialización del formulario de país...
+2026-09-10 17:45:47,753 - INFO -  🔹 Ingresando Proveedor: 010479
+2026-09-10 17:45:48,283 - INFO - [Proveedor] (<input> #data04VendorCode) reflejado en DOM: '010479'
+2026-09-10 17:45:48,300 - INFO -  🔹 Ingresando Comprador: 710
+2026-09-10 17:45:48,833 - INFO - [Comprador] (<input> #data04BuyerCode) reflejado en DOM: '710'
+2026-09-10 17:45:48,834 - INFO -  🔹 Ingresando Evento: 21
+2026-09-10 17:45:49,383 - INFO - [Evento] (<input> #data04EventCode) reflejado en DOM: '21'
+2026-09-10 17:45:49,384 - INFO -  🔹 Ingresando Bodega: 99
+2026-09-10 17:45:50,185 - INFO - [Bodega] (<input> #data04WarehouseCode) reflejado en DOM: '99'
+2026-09-10 17:45:50,935 - INFO - [Fecha Embarque] (<input> #data04ShipDate) reflejado en DOM: '20260910'
+2026-09-10 17:45:51,561 - INFO - [Fecha Recepción] (<input> #data04ExpectedReceiptDate) reflejado en DOM: '20260913'
+2026-09-10 17:45:52,127 - INFO - [Fecha Distribución] (<input> #data04DistributedDate) reflejado en DOM: '20260915'
+2026-09-10 17:45:52,763 - INFO - [Fecha Cancelación] (<input> #data04CancelationDate) reflejado en DOM: '20260917'
+2026-09-10 17:45:53,392 - INFO - [Fecha OTB] (<input> #data04OtbDate1) reflejado en DOM: '202609'
+2026-09-10 17:45:54,160 - INFO - [Términos de Pago] (<input> #data04TermNumberDays1) reflejado en DOM: '30'
+2026-09-10 17:45:54,774 - INFO - [Correo Electrónico] (<input> #data04PoEmail) reflejado en DOM: 'eliseo_lopezp@unicomer.com'
+2026-09-10 17:45:54,930 - INFO - Tipo PO configurado como: Importada
+2026-09-10 17:45:56,932 - INFO -  🔹 Ingresando Proveedor Sugerido (RWT): 006227
+2026-09-10 17:45:57,638 - INFO - [Proveedor Sugerido / RWT] (<input> #data04Svnhprm) reflejado en DOM: '006227'
+2026-09-10 17:45:57,639 - INFO - Esperando respuesta AJAX de Vendor Site Code (getSiteCode)...
+2026-09-10 17:46:00,752 - INFO - Vendor Site Code seleccionado exitosamente: 'US_RWT_MERCADO'
+2026-09-10 17:46:00,760 - INFO - Todos los datos del formulario fueron procesados correctamente.
+2026-09-10 17:46:05,761 - INFO - PO ingresado exitosamente
+2026-09-10 17:46:05,762 - INFO - Buscando y haciendo clic en el botón 'Continuar'...
+2026-09-10 17:46:05,820 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:46:06,081 - INFO - Clic en 'Continuar' (ID='next') realizado.
+2026-09-10 17:46:09,082 - INFO - Buscando y haciendo clic en el botón 'Importar SKU'...
+2026-09-10 17:46:09,962 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:46:10,212 - INFO - Clic en 'Importar SKU' realizado con éxito.
+2026-09-10 17:46:12,214 - INFO - Iniciando proceso de importación de archivo SKU...
+2026-09-10 17:46:12,214 - INFO - Cambiando al iframe 'frameImporSkuXlsF1'...
+2026-09-10 17:46:12,270 - INFO - Buscando el campo de entrada de archivo (input[type='file'])...
+2026-09-10 17:46:12,793 - INFO - Asignando ruta: 'C:\Users\eliseo_lopezp\automatizacion\archivos\IMPORTADA\5_Plantilla.xls'
+2026-09-10 17:46:13,831 - INFO - Archivo asignado en el input. Valor: 'C:\fakepath\5_Plantilla.xls'
+2026-09-10 17:46:13,831 - INFO - Buscando el botón para enviar el archivo (Submit)...
+2026-09-10 17:46:14,135 - INFO - Clic en el botón de envío 'Submit' realizado.
+2026-09-10 17:46:14,135 - INFO - Esperando respuesta del servidor...
+2026-09-10 17:46:14,146 - INFO - Confirmación recibida: El archivo se procesó en el backend.
+2026-09-10 17:46:14,150 - INFO - Buscando y haciendo clic en el botón 'Cerrar' del diálogo...
+2026-09-10 17:46:24,624 - WARNING - No se pudo hacer clic en el botón 'Cerrar' de forma normal. Intentando forzar el clic con JavaScript.
+2026-09-10 17:46:24,651 - INFO - Diálogo de importación cerrado forzando el clic con JavaScript.
+2026-09-10 17:46:24,673 - INFO - El cuadro de diálogo de importación se ha cerrado por completo.
+2026-09-10 17:46:25,758 - INFO - 📦 Número maestro de PO extraído exitosamente: '0200745247'
+2026-09-10 17:46:25,759 - INFO - PO 0200745247 extraído. Guardando inmediatamente en JSON por si ocurre un fallo...
+2026-09-10 17:46:26,056 - INFO - Click en 'Resumen de Orden de Compra'realizado
+2026-09-10 17:46:46,653 - INFO - Click en 'Enviar a Aprobación' (resumen) realizado
+2026-09-10 17:46:49,668 - INFO - Procediendo a autorizar la PO 0200745247 desde el menú...
+2026-09-10 17:46:49,722 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:46:49,942 - INFO - Clic en menú 'Autorizar PO' (Titulo8Opcion71) realizado.
+2026-09-10 17:46:51,989 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:46:52,755 - INFO - Búsqueda de PO 0200745247 para autorizar enviada.
+2026-09-10 17:46:53,962 - INFO - Checkbox de la PO 0200745247 seleccionado.
+2026-09-10 17:46:55,685 - INFO - Clic en 'Aceptar' (acceptButton) realizado para autorizar (con espera explícita).
+2026-09-10 17:46:57,695 - INFO - Clic en 'Cerrar' (jQuery UI dialog) realizado con éxito mediante JS.
+2026-09-10 17:46:57,712 - INFO - El cuadro de diálogo se ha cerrado por completo.
+2026-09-10 17:46:57,723 - INFO - La capa de carga posterior a la autorización ha desaparecido.
+2026-09-10 17:46:58,725 - INFO - [EXITO] PO (Importada) N° Maestro [0200745247] procesada (Creada y Autorizada) para: 5_Plantilla.xls
+2026-09-10 17:47:01,726 - INFO - ============================================================
+2026-09-10 17:47:01,726 - INFO - [PROCESANDO] [3/4] (Local): 1_Plantilla.xls
+2026-09-10 17:47:01,726 - INFO - ============================================================
+2026-09-10 17:47:03,796 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:47:03,826 - INFO - [OK] Submenú 'Crear PO' ya se encuentra desplegado.
+2026-09-10 17:47:26,892 - INFO - [OK] Click en 'Digitar PO' (Crear PO Venta) realizado
+2026-09-10 17:47:30,952 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:47:38,180 - INFO - Descripción del PO ingresada correctamente.
+2026-09-10 17:47:39,448 - INFO - Nicaragua seleccionado.
+2026-09-10 17:47:41,630 - INFO - Clic en El Salvador realizado para desmarcarlo.
+2026-09-10 17:47:42,635 - WARNING - Alerta detectada: '¿Está seguro que Desea Eliminar el País?'. Aceptando...
+2026-09-10 17:47:42,638 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:47:44,643 - WARNING - Alerta detectada: 'Esta acción eliminará todos los registros de la Orden del país seleccionado.'. Aceptando...
+2026-09-10 17:47:44,646 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:47:49,670 - INFO - Esperando que finalice la inicialización del formulario de país...
+2026-09-10 17:47:56,099 - INFO -  🔹 Ingresando Proveedor: 010479
+2026-09-10 17:47:56,623 - INFO - [Proveedor] (<input> #data04VendorCode) reflejado en DOM: '010479'
+2026-09-10 17:47:56,640 - INFO -  🔹 Ingresando Comprador: 710
+2026-09-10 17:47:57,158 - INFO - [Comprador] (<input> #data04BuyerCode) reflejado en DOM: '710'
+2026-09-10 17:47:57,159 - INFO -  🔹 Ingresando Evento: 21
+2026-09-10 17:47:57,762 - INFO - [Evento] (<input> #data04EventCode) reflejado en DOM: '21'
+2026-09-10 17:47:57,763 - INFO -  🔹 Ingresando Bodega: 99
+2026-09-10 17:47:58,372 - INFO - [Bodega] (<input> #data04WarehouseCode) reflejado en DOM: '99'
+2026-09-10 17:47:59,046 - INFO - [Fecha Embarque] (<input> #data04ShipDate) reflejado en DOM: '20260910'
+2026-09-10 17:47:59,685 - INFO - [Fecha Recepción] (<input> #data04ExpectedReceiptDate) reflejado en DOM: '20260913'
+2026-09-10 17:48:00,279 - INFO - [Fecha Distribución] (<input> #data04DistributedDate) reflejado en DOM: '20260915'
+2026-09-10 17:48:00,890 - INFO - [Fecha Cancelación] (<input> #data04CancelationDate) reflejado en DOM: '20260917'
+2026-09-10 17:48:01,593 - INFO - [Fecha OTB] (<input> #data04OtbDate1) reflejado en DOM: '202609'
+2026-09-10 17:48:02,317 - INFO - [Términos de Pago] (<input> #data04TermNumberDays1) reflejado en DOM: '30'
+2026-09-10 17:48:03,163 - INFO - [Correo Electrónico] (<input> #data04PoEmail) reflejado en DOM: 'eliseo_lopezp@unicomer.com'
+2026-09-10 17:48:03,277 - INFO - Tipo PO configurado como: Local
+2026-09-10 17:48:05,278 - INFO - PO es Local: Se omite el segundo proveedor.
+2026-09-10 17:48:05,278 - INFO - Todos los datos del formulario fueron procesados correctamente.
+2026-09-10 17:48:10,279 - INFO - PO ingresado exitosamente
+2026-09-10 17:48:10,279 - INFO - Buscando y haciendo clic en el botón 'Continuar'...
+2026-09-10 17:48:10,333 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:48:10,567 - INFO - Clic en 'Continuar' (ID='next') realizado.
+2026-09-10 17:48:13,568 - INFO - Buscando y haciendo clic en el botón 'Importar SKU'...
+2026-09-10 17:48:14,437 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:48:14,716 - INFO - Clic en 'Importar SKU' realizado con éxito.
+2026-09-10 17:48:16,718 - INFO - Iniciando proceso de importación de archivo SKU...
+2026-09-10 17:48:16,719 - INFO - Cambiando al iframe 'frameImporSkuXlsF1'...
+2026-09-10 17:48:16,763 - INFO - Buscando el campo de entrada de archivo (input[type='file'])...
+2026-09-10 17:48:17,281 - INFO - Asignando ruta: 'C:\Users\eliseo_lopezp\automatizacion\archivos\LOCAL\1_Plantilla.xls'
+2026-09-10 17:48:18,319 - INFO - Archivo asignado en el input. Valor: 'C:\fakepath\1_Plantilla.xls'
+2026-09-10 17:48:18,319 - INFO - Buscando el botón para enviar el archivo (Submit)...
+2026-09-10 17:48:18,625 - INFO - Clic en el botón de envío 'Submit' realizado.
+2026-09-10 17:48:18,625 - INFO - Esperando respuesta del servidor...
+2026-09-10 17:48:18,636 - INFO - Confirmación recibida: El archivo se procesó en el backend.
+2026-09-10 17:48:18,641 - INFO - Buscando y haciendo clic en el botón 'Cerrar' del diálogo...
+2026-09-10 17:48:29,120 - WARNING - No se pudo hacer clic en el botón 'Cerrar' de forma normal. Intentando forzar el clic con JavaScript.
+2026-09-10 17:48:29,150 - INFO - Diálogo de importación cerrado forzando el clic con JavaScript.
+2026-09-10 17:48:29,174 - INFO - El cuadro de diálogo de importación se ha cerrado por completo.
+2026-09-10 17:48:30,254 - INFO - 📦 Número maestro de PO extraído exitosamente: '0200745248'
+2026-09-10 17:48:30,256 - INFO - PO 0200745248 extraído. Guardando inmediatamente en JSON por si ocurre un fallo...
+2026-09-10 17:48:30,542 - INFO - Click en 'Resumen de Orden de Compra'realizado
+2026-09-10 17:48:45,229 - INFO - Click en 'Enviar a Aprobación' (resumen) realizado
+2026-09-10 17:48:48,239 - INFO - Procediendo a autorizar la PO 0200745248 desde el menú...
+2026-09-10 17:48:48,286 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:48:48,497 - INFO - Clic en menú 'Autorizar PO' (Titulo8Opcion71) realizado.
+2026-09-10 17:48:50,547 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:48:51,317 - INFO - Búsqueda de PO 0200745248 para autorizar enviada.
+2026-09-10 17:48:52,512 - INFO - Checkbox de la PO 0200745248 seleccionado.
+2026-09-10 17:48:54,274 - INFO - Clic en 'Aceptar' (acceptButton) realizado para autorizar (con espera explícita).
+2026-09-10 17:48:56,286 - INFO - Clic en 'Cerrar' (jQuery UI dialog) realizado con éxito mediante JS.
+2026-09-10 17:48:56,309 - INFO - El cuadro de diálogo se ha cerrado por completo.
+2026-09-10 17:48:56,321 - INFO - La capa de carga posterior a la autorización ha desaparecido.
+2026-09-10 17:48:57,323 - INFO - [EXITO] PO (Local) N° Maestro [0200745248] procesada (Creada y Autorizada) para: 1_Plantilla.xls
+2026-09-10 17:49:00,325 - INFO - ============================================================
+2026-09-10 17:49:00,326 - INFO - [PROCESANDO] [4/4] (Local): 3_Plantilla.xls
+2026-09-10 17:49:00,326 - INFO - ============================================================
+2026-09-10 17:49:02,382 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:49:02,408 - INFO - [OK] Submenú 'Crear PO' ya se encuentra desplegado.
+2026-09-10 17:49:30,036 - INFO - [OK] Click en 'Digitar PO' (Crear PO Venta) realizado
+2026-09-10 17:49:34,088 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:49:41,298 - INFO - Descripción del PO ingresada correctamente.
+2026-09-10 17:49:42,653 - INFO - Nicaragua seleccionado.
+2026-09-10 17:49:44,829 - INFO - Clic en El Salvador realizado para desmarcarlo.
+2026-09-10 17:49:45,835 - WARNING - Alerta detectada: '¿Está seguro que Desea Eliminar el País?'. Aceptando...
+2026-09-10 17:49:45,838 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:49:47,844 - WARNING - Alerta detectada: 'Esta acción eliminará todos los registros de la Orden del país seleccionado.'. Aceptando...
+2026-09-10 17:49:47,846 - INFO - Alerta de eliminación de país aceptada correctamente.
+2026-09-10 17:49:52,872 - INFO - Esperando que finalice la inicialización del formulario de país...
+2026-09-10 17:49:59,254 - INFO -  🔹 Ingresando Proveedor: 010479
+2026-09-10 17:49:59,794 - INFO - [Proveedor] (<input> #data04VendorCode) reflejado en DOM: '010479'
+2026-09-10 17:49:59,809 - INFO -  🔹 Ingresando Comprador: 710
+2026-09-10 17:50:00,364 - INFO - [Comprador] (<input> #data04BuyerCode) reflejado en DOM: '710'
+2026-09-10 17:50:00,364 - INFO -  🔹 Ingresando Evento: 21
+2026-09-10 17:50:01,166 - INFO - [Evento] (<input> #data04EventCode) reflejado en DOM: '21'
+2026-09-10 17:50:01,167 - INFO -  🔹 Ingresando Bodega: 99
+2026-09-10 17:50:01,763 - INFO - [Bodega] (<input> #data04WarehouseCode) reflejado en DOM: '99'
+2026-09-10 17:50:02,442 - INFO - [Fecha Embarque] (<input> #data04ShipDate) reflejado en DOM: '20260910'
+2026-09-10 17:50:03,119 - INFO - [Fecha Recepción] (<input> #data04ExpectedReceiptDate) reflejado en DOM: '20260913'
+2026-09-10 17:50:03,798 - INFO - [Fecha Distribución] (<input> #data04DistributedDate) reflejado en DOM: '20260915'
+2026-09-10 17:50:04,421 - INFO - [Fecha Cancelación] (<input> #data04CancelationDate) reflejado en DOM: '20260917'
+2026-09-10 17:50:05,049 - INFO - [Fecha OTB] (<input> #data04OtbDate1) reflejado en DOM: '202609'
+2026-09-10 17:50:05,804 - INFO - [Términos de Pago] (<input> #data04TermNumberDays1) reflejado en DOM: '30'
+2026-09-10 17:50:06,364 - INFO - [Correo Electrónico] (<input> #data04PoEmail) reflejado en DOM: 'eliseo_lopezp@unicomer.com'
+2026-09-10 17:50:06,449 - INFO - Tipo PO configurado como: Local
+2026-09-10 17:50:08,451 - INFO - PO es Local: Se omite el segundo proveedor.
+2026-09-10 17:50:08,451 - INFO - Todos los datos del formulario fueron procesados correctamente.
+2026-09-10 17:50:13,452 - INFO - PO ingresado exitosamente
+2026-09-10 17:50:13,453 - INFO - Buscando y haciendo clic en el botón 'Continuar'...
+2026-09-10 17:50:13,516 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:50:13,759 - INFO - Clic en 'Continuar' (ID='next') realizado.
+2026-09-10 17:50:16,760 - INFO - Buscando y haciendo clic en el botón 'Importar SKU'...
+2026-09-10 17:50:16,818 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:50:17,099 - INFO - Clic en 'Importar SKU' realizado con éxito.
+2026-09-10 17:50:19,100 - INFO - Iniciando proceso de importación de archivo SKU...
+2026-09-10 17:50:19,101 - INFO - Cambiando al iframe 'frameImporSkuXlsF1'...
+2026-09-10 17:50:19,148 - INFO - Buscando el campo de entrada de archivo (input[type='file'])...
+2026-09-10 17:50:19,667 - INFO - Asignando ruta: 'C:\Users\eliseo_lopezp\automatizacion\archivos\LOCAL\3_Plantilla.xls'
+2026-09-10 17:50:20,704 - INFO - Archivo asignado en el input. Valor: 'C:\fakepath\3_Plantilla.xls'
+2026-09-10 17:50:20,705 - INFO - Buscando el botón para enviar el archivo (Submit)...
+2026-09-10 17:50:21,022 - INFO - Clic en el botón de envío 'Submit' realizado.
+2026-09-10 17:50:21,022 - INFO - Esperando respuesta del servidor...
+2026-09-10 17:50:21,035 - INFO - Confirmación recibida: El archivo se procesó en el backend.
+2026-09-10 17:50:21,040 - INFO - Buscando y haciendo clic en el botón 'Cerrar' del diálogo...
+2026-09-10 17:50:31,530 - WARNING - No se pudo hacer clic en el botón 'Cerrar' de forma normal. Intentando forzar el clic con JavaScript.
+2026-09-10 17:50:31,560 - INFO - Diálogo de importación cerrado forzando el clic con JavaScript.
+2026-09-10 17:50:31,585 - INFO - El cuadro de diálogo de importación se ha cerrado por completo.
+2026-09-10 17:50:32,677 - INFO - 📦 Número maestro de PO extraído exitosamente: '0200745249'
+2026-09-10 17:50:32,677 - INFO - PO 0200745249 extraído. Guardando inmediatamente en JSON por si ocurre un fallo...
+2026-09-10 17:50:33,099 - INFO - Click en 'Resumen de Orden de Compra'realizado
+2026-09-10 17:50:54,100 - INFO - Click en 'Enviar a Aprobación' (resumen) realizado
+2026-09-10 17:50:57,112 - INFO - Procediendo a autorizar la PO 0200745249 desde el menú...
+2026-09-10 17:50:57,164 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:50:57,370 - INFO - Clic en menú 'Autorizar PO' (Titulo8Opcion71) realizado.
+2026-09-10 17:50:59,413 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:51:00,131 - INFO - Búsqueda de PO 0200745249 para autorizar enviada.
+2026-09-10 17:51:01,335 - INFO - Checkbox de la PO 0200745249 seleccionado.
+2026-09-10 17:51:03,142 - INFO - Clic en 'Aceptar' (acceptButton) realizado para autorizar (con espera explícita).
+2026-09-10 17:51:05,153 - INFO - Clic en 'Cerrar' (jQuery UI dialog) realizado con éxito mediante JS.
+2026-09-10 17:51:05,171 - INFO - El cuadro de diálogo se ha cerrado por completo.
+2026-09-10 17:51:05,179 - INFO - La capa de carga posterior a la autorización ha desaparecido.
+2026-09-10 17:51:06,182 - INFO - [EXITO] PO (Local) N° Maestro [0200745249] procesada (Creada y Autorizada) para: 3_Plantilla.xls
+2026-09-10 17:51:09,184 - INFO - --- INICIANDO FLUJO 2: EJECUCIÓN PROCEDIMIENTO DB2 ---
+2026-09-10 17:51:09,184 - INFO - Iniciando conexión a DB2 para ejecutar ELOPEZ.RETACEO()...
+2026-09-10 17:51:39,753 - INFO - [EXITO DB] Procedimiento ELOPEZ.RETACEO() ejecutado correctamente.
+2026-09-10 17:51:39,753 - INFO - --- INICIANDO FLUJO 3: CAMBIO DE ESTADO Y EXTRACCIÓN RI ---
+2026-09-10 17:51:39,753 - INFO - [PROCESANDO ESTADO] [1/4] PO: 0200745248
+2026-09-10 17:51:39,805 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:51:40,970 - ERROR - Error al navegar a Cambiar Estado PO: Message: element click intercepted: Element <input class="boton2" type="button" name="Titulo8Opcion66" id="Titulo8Opcion66" value="Cambiar Estado PO" onmouseover="funcsub(this.name);" onmouseout="funcsub2(this.name);" onclick="verificaOpcion('66');ejecutar('/OCEANO/POSearchServlet?cmd=viewStatus&amp;option=66','','was7tr1.siman.com','ELOPEZ'); clearcolor(); this.style.color='gold';" style="color: white;"> is not clickable at point (97, 325). Other element would receive the click: <div class="blockUI blockMsg blockPage" style="z-index: 1001; position: fixed; padding: 15px; margin: 0px; width: 125px; top: 40%; left: 25px; text-align: center; color: rgb(0, 0, 0); border-width: medium; border-style: none; border-color: currentcolor; border-image: none; background-color: rgb(255, 255, 255); cursor: wait; right: 10px; border-radius: 10px; opacity: 0.239696;">...</div>
+  (Session info: chrome=152.0.7977.76); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementclickinterceptedexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7e567e035+5745]
+	chromedriver!(No symbol) [0x7ff7e55a6a90]
+	chromedriver!(No symbol) [0x7ff7e53d5d7d]
+	chromedriver!(No symbol) [0x7ff7e54387e3]
+	chromedriver!(No symbol) [0x7ff7e5436413]
+	chromedriver!(No symbol) [0x7ff7e5433767]
+	chromedriver!(No symbol) [0x7ff7e5432630]
+	chromedriver!(No symbol) [0x7ff7e5424d88]
+	chromedriver!(No symbol) [0x7ff7e54595ca]
+	chromedriver!(No symbol) [0x7ff7e5424606]
+	chromedriver!(No symbol) [0x7ff7e547e502]
+	chromedriver!(No symbol) [0x7ff7e5422e4b]
+	chromedriver!(No symbol) [0x7ff7e5423d83]
+	chromedriver!GetHandleVerifier [0x7ff7e5a92f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff7e5ac0132+447842]
+	chromedriver!GetHandleVerifier [0x7ff7e5ab3e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff7e5773f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff7e55b419c]
+	chromedriver!(No symbol) [0x7ff7e55afdd4]
+	chromedriver!(No symbol) [0x7ff7e55aff64]
+	chromedriver!(No symbol) [0x7ff7e559a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ffe929be957+17]
+	ntdll!RtlUserThreadStart [0x7ffe9416ad6c+2c]
+
+2026-09-10 17:51:41,019 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:51:51,261 - ERROR - Error en buscar_y_cambiar_estado_po para 0200745248: Message: 
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x7ff7e567e035+5745]
+	chromedriver!(No symbol) [0x7ff7e55a6a90]
+	chromedriver!(No symbol) [0x7ff7e53d5d7d]
+	chromedriver!(No symbol) [0x7ff7e54309ea]
+	chromedriver!(No symbol) [0x7ff7e5430cfc]
+	chromedriver!(No symbol) [0x7ff7e54818f7]
+	chromedriver!(No symbol) [0x7ff7e547e502]
+	chromedriver!(No symbol) [0x7ff7e5422e4b]
+	chromedriver!(No symbol) [0x7ff7e5423d83]
+	chromedriver!GetHandleVerifier [0x7ff7e5a92f8b+41a69b]
+	chromedriver!GetHandleVerifier [0x7ff7e5ac0132+447842]
+	chromedriver!GetHandleVerifier [0x7ff7e5ab3e7e+43b58e]
+	chromedriver!GetHandleVerifier [0x7ff7e5773f5e+fb66e]
+	chromedriver!(No symbol) [0x7ff7e55b419c]
+	chromedriver!(No symbol) [0x7ff7e55afdd4]
+	chromedriver!(No symbol) [0x7ff7e55aff64]
+	chromedriver!(No symbol) [0x7ff7e559a91c]
+	KERNEL32!BaseThreadInitThunk [0x7ffe929be957+17]
+	ntdll!RtlUserThreadStart [0x7ffe9416ad6c+2c]
+
+2026-09-10 17:51:51,261 - WARNING - [ADVERTENCIA] Falló el cambio de estado de la PO 0200745248. Marcando como Pendiente.
+2026-09-10 17:51:51,263 - INFO - [PROCESANDO ESTADO] [2/4] PO: 0200745249
+2026-09-10 17:51:51,312 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:51:51,537 - INFO - Clic en menú 'Cambiar Estado PO' (Titulo8Opcion66) realizado.
+2026-09-10 17:51:53,599 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:51:54,008 - INFO - Búsqueda ejecutada para PO: 0200745249
+2026-09-10 17:51:58,157 - INFO - 📦 RI extraído del atributo onclick: 111799
+2026-09-10 17:51:58,316 - INFO - Radio button de la PO seleccionado.
+2026-09-10 17:51:58,524 - INFO - Clic en 'Cambiar Estado PO' (botonCopy) realizado.
+2026-09-10 17:52:04,466 - INFO - Clic en 'Cambiar estado de la orden' (changePOButton) realizado.
+2026-09-10 17:52:06,468 - INFO - [EXITO] PO 0200745249 cambió de estado. RI extraído: 111799
+2026-09-10 17:52:06,469 - INFO - [PROCESANDO ESTADO] [3/4] PO: 0200745246
+2026-09-10 17:52:06,520 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:52:06,760 - INFO - Clic en menú 'Cambiar Estado PO' (Titulo8Opcion66) realizado.
+2026-09-10 17:52:08,809 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:52:09,205 - INFO - Búsqueda ejecutada para PO: 0200745246
+2026-09-10 17:52:13,898 - INFO - 📦 RI extraído del atributo onclick: 111796
+2026-09-10 17:52:14,029 - INFO - Radio button de la PO seleccionado.
+2026-09-10 17:52:14,204 - INFO - Clic en 'Cambiar Estado PO' (botonCopy) realizado.
+2026-09-10 17:52:20,100 - INFO - Clic en 'Cambiar estado de la orden' (changePOButton) realizado.
+2026-09-10 17:52:22,101 - INFO - [EXITO] PO 0200745246 cambió de estado. RI extraído: 111796
+2026-09-10 17:52:22,102 - INFO - [PROCESANDO ESTADO] [4/4] PO: 0200745247
+2026-09-10 17:52:22,151 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:52:22,382 - INFO - Clic en menú 'Cambiar Estado PO' (Titulo8Opcion66) realizado.
+2026-09-10 17:52:24,448 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:52:24,889 - INFO - Búsqueda ejecutada para PO: 0200745247
+2026-09-10 17:52:29,057 - INFO - 📦 RI extraído del atributo onclick: 111797
+2026-09-10 17:52:29,223 - INFO - Radio button de la PO seleccionado.
+2026-09-10 17:52:29,420 - INFO - Clic en 'Cambiar Estado PO' (botonCopy) realizado.
+2026-09-10 17:52:35,296 - INFO - Clic en 'Cambiar estado de la orden' (changePOButton) realizado.
+2026-09-10 17:52:37,298 - INFO - [EXITO] PO 0200745247 cambió de estado. RI extraído: 111797
+2026-09-10 17:52:37,300 - INFO - --- SE ENCONTRARON 1 PO(S) PENDIENTES. INICIANDO REINTENTO ---
+2026-09-10 17:52:37,301 - INFO - Ejecutando procedimiento de DB2 nuevamente antes del reintento...
+2026-09-10 17:52:37,301 - INFO - Iniciando conexión a DB2 para ejecutar ELOPEZ.RETACEO()...
+2026-09-10 17:53:03,263 - INFO - [EXITO DB] Procedimiento ELOPEZ.RETACEO() ejecutado correctamente.
+2026-09-10 17:53:03,265 - INFO - [REINTENTO ESTADO] [1/1] PO: 0200745248
+2026-09-10 17:53:03,319 - INFO - [OK] Cambiado al frame 'menu'
+2026-09-10 17:53:03,567 - INFO - Clic en menú 'Cambiar Estado PO' (Titulo8Opcion66) realizado.
+2026-09-10 17:53:05,626 - INFO - [OK] Cambiado al frame 'trabajo'
+2026-09-10 17:53:06,050 - INFO - Búsqueda ejecutada para PO: 0200745248
+2026-09-10 17:53:09,682 - INFO - 📦 RI extraído del atributo onclick: 111798
+2026-09-10 17:53:09,873 - INFO - Radio button de la PO seleccionado.
+2026-09-10 17:53:10,083 - INFO - Clic en 'Cambiar Estado PO' (botonCopy) realizado.
+2026-09-10 17:53:15,543 - INFO - Clic en 'Cambiar estado de la orden' (changePOButton) realizado.
+2026-09-10 17:53:17,544 - INFO - [REINTENTO EXITO] PO 0200745248 cambió de estado. RI extraído: 111798
+2026-09-10 17:53:17,546 - INFO - Proceso completado: se procesaron estados para 4 PO(s) en esta ejecución.
+2026-09-10 17:53:22,547 - INFO - Intentando cerrar sesión en el sistema...
+2026-09-10 17:53:22,548 - INFO - Bloqueo de suspensión de pantalla DESACTIVADO.
+2026-09-10 17:53:25,072 - INFO - Generando archivo Excel final con los resultados...
+2026-09-10 17:53:26,800 - INFO - Reporte añadido como nueva pestaña 'Ejecucion_20260910_1753' en: C:\Users\eliseo_lopezp\proyecto1\PO_SUMMER\Reporte_Final_POs.xlsx
+2026-09-10 17:53:26,800 - INFO - El PO_REPORT está al 100% completado. Procediendo a generar la tarea en Jira...
+2026-09-10 17:53:27,189 - INFO - El procesamiento de Jira está deshabilitado en la configuración (habilitar_jira != 'Y'). Saltando creación de tarea.

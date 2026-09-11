@@ -1,0 +1,98 @@
+[
+    {
+        "ID": "1",
+        "TIPO": "PO",
+        "PAIS": "Local",
+        "PREDISTRIBUIDO": "SI",
+        "Archivo_Generado": "ARCHIVOS/LOCAL/1_Plantilla.xls",
+        "Detalles": [
+            {
+                "SKU": "589686",
+                "TIENDA": "411",
+                "CANTIDADES": 5,
+                "ITEMS": 458968600013
+            },
+            {
+                "SKU": "589604",
+                "TIENDA": "411",
+                "CANTIDADES": 5,
+                "ITEMS": 458960400017
+            }
+        ],
+        "Estado": "Completado",
+        "po_numero": "0200745248",
+        "RI": "111798"
+    },
+    {
+        "ID": "3",
+        "TIPO": "PO",
+        "PAIS": "Local",
+        "PREDISTRIBUIDO": "SI",
+        "Archivo_Generado": "ARCHIVOS/LOCAL/3_Plantilla.xls",
+        "Detalles": [
+            {
+                "SKU": "589610",
+                "TIENDA": "414",
+                "CANTIDADES": 5,
+                "ITEMS": 458961000018
+            },
+            {
+                "SKU": "556416",
+                "TIENDA": "414",
+                "CANTIDADES": 5,
+                "ITEMS": 455641600018
+            }
+        ],
+        "Estado": "Completado",
+        "po_numero": "0200745249",
+        "RI": "111799"
+    },
+    {
+        "ID": "4",
+        "TIPO": "PO",
+        "PAIS": "Importado ",
+        "PREDISTRIBUIDO": "SI",
+        "Archivo_Generado": "ARCHIVOS/IMPORTADA/4_Plantilla.xls",
+        "Detalles": [
+            {
+                "SKU": "104462",
+                "TIENDA": "411",
+                "CANTIDADES": 3,
+                "ITEMS": 410446200009
+            },
+            {
+                "SKU": "106067",
+                "TIENDA": "411",
+                "CANTIDADES": 3,
+                "ITEMS": 410606700004
+            }
+        ],
+        "Estado": "Completado",
+        "po_numero": "0200745246",
+        "RI": "111796"
+    },
+    {
+        "ID": "5",
+        "TIPO": "PO",
+        "PAIS": "Importado ",
+        "PREDISTRIBUIDO": "SI",
+        "Archivo_Generado": "ARCHIVOS/IMPORTADA/5_Plantilla.xls",
+        "Detalles": [
+            {
+                "SKU": "106429",
+                "TIENDA": "414",
+                "CANTIDADES": 5,
+                "ITEMS": 410642900000
+            },
+            {
+                "SKU": "106882",
+                "TIENDA": "414",
+                "CANTIDADES": 5,
+                "ITEMS": 410688200003
+            }
+        ],
+        "Estado": "Completado",
+        "po_numero": "0200745247",
+        "RI": "111797"
+    }
+]
